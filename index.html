@@ -1,15 +1,20 @@
 <!doctype html>
 <html lang="en" class="h-full">
  <head>
-  <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="assets/1.png">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multilingual Resume</title>
-  <script src="/_sdk/element_sdk.js"></script>
+  <title>Mehdi Miri - Resume</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
     
     .rtl-text {
@@ -39,13 +44,6 @@
       transform: scale(1.05);
     }
     
-    .gradient-border {
-      position: relative;
-      background: linear-gradient(white, white) padding-box,
-                  linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
-      border: 3px solid transparent;
-    }
-    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -57,28 +55,20 @@
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full">
+ <body class="h-full" style="background-color: #f0f4f8; font-family: Inter, system-ui, -apple-system, sans-serif; color: #1e293b; font-size: 16px;">
   <div id="app" class="w-full h-full overflow-auto"></div>
   <script>
-    const defaultConfig = {
-      background_color: "#f0f4f8",
-      surface_color: "#ffffff",
-      text_color: "#1e293b",
-      primary_action_color: "#3b82f6",
-      secondary_action_color: "#8b5cf6",
-      font_family: "Inter",
-      font_size: 16,
-      full_name: "Mehdi Miri",
-      job_title: "Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany",
-      email: "mehdiporoki@gmail.com",
-      phone: "@Mitimm",
-      location: "Kermanshah, IR",
-      summary_text: "I am a motivated junior backend developer with a strong interest in problem-solving, continuous learning, and building scalable solutions.",
-      education_title: "Education",
-      skills_title: "Skills"
+    const colors = {
+      background: "#f0f4f8",
+      surface: "#ffffff",
+      text: "#1e293b",
+      primary: "#3b82f6",
+      secondary: "#8b5cf6"
     };
 
+    const baseSize = 16;
     let currentLanguage = 'en';
 
     const translations = {
@@ -185,7 +175,9 @@
         languagesTitle: "Languages",
         contactTitle: "Let's Connect",
         contactText: "I'm always open to discussing new opportunities, IT Ausbildung positions, or collaborations on backend and blockchain projects. Feel free to reach out!",
-        footer: "© 2025 Mehdi Miri"
+        footer: "© 2025 Mehdi Miri",
+        educationTitle: "Education",
+        skillsTitle: "Skills"
       },
       de: {
         education: [
@@ -266,7 +258,9 @@
         languagesTitle: "Sprachen",
         contactTitle: "Kontakt aufnehmen",
         contactText: "Ich bin immer offen für Gespräche über neue Möglichkeiten, IT-Ausbildungsplätze oder Zusammenarbeit an Backend- und Blockchain-Projekten. Kontaktieren Sie mich gerne!",
-        footer: "© 2025 Mehdi Miri"
+        footer: "© 2025 Mehdi Miri",
+        educationTitle: "Bildung",
+        skillsTitle: "Fähigkeiten"
       },
       fa: {
         education: [
@@ -347,38 +341,18 @@
         languagesTitle: "زبان‌ها",
         contactTitle: "بیایید در ارتباط باشیم",
         contactText: "من همیشه آماده بحث درباره فرصت‌های جدید، موقعیت‌های آوسبیلدونگ IT، یا همکاری در پروژه‌های بک‌اند و بلاکچین هستم. خوشحال می‌شوم با من در تماس باشید!",
-        footer: "© ۲۰۲۵ مهدی میری"
+        footer: "© ۲۰۲۵ مهدی میری",
+        educationTitle: "تحصیلات",
+        skillsTitle: "مهارت‌ها"
       }
     };
 
-    async function onConfigChange(config) {
-      const baseSize = config.font_size || defaultConfig.font_size;
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseFontStack = 'system-ui, -apple-system, sans-serif';
-      const fontFamily = `${customFont}, ${baseFontStack}`;
-
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-
-      const fullName = config.full_name || defaultConfig.full_name;
-      const email = config.email || defaultConfig.email;
-      const phone = config.phone || defaultConfig.phone;
-      const location = config.location || defaultConfig.location;
-      const educationTitle = config.education_title || defaultConfig.education_title;
-      const skillsTitle = config.skills_title || defaultConfig.skills_title;
-
+    function render() {
       const directionClass = currentLanguage === 'fa' ? 'rtl-text' : 'ltr-text';
+      const t = translations[currentLanguage];
+      const c = content[currentLanguage];
 
-      const app = document.getElementById('app');
-      app.style.backgroundColor = backgroundColor;
-      app.style.fontFamily = fontFamily;
-      app.style.color = textColor;
-      app.style.fontSize = `${baseSize}px`;
-
-      app.innerHTML = `
+      document.getElementById('app').innerHTML = `
         <div class="max-w-5xl mx-auto p-8">
           <!-- Language Tabs -->
           <div class="flex gap-3 mb-10 justify-center fade-in">
@@ -394,56 +368,56 @@
           </div>
 
           <!-- Resume Content -->
-          <div id="resume-content" class="rounded-2xl shadow-2xl p-10 ${directionClass} fade-in" style="background: linear-gradient(135deg, ${surfaceColor} 0%, ${surfaceColor}f5 100%);">
+          <div id="resume-content" class="rounded-2xl shadow-2xl p-10 ${directionClass} fade-in" style="background: linear-gradient(135deg, ${colors.surface} 0%, ${colors.surface}f5 100%);">
             <!-- Header with Gradient -->
-            <div class="border-b-2 pb-8 mb-8" style="border-image: linear-gradient(90deg, ${primaryColor}, ${secondaryColor}) 1;">
-              <h1 class="font-bold mb-3" style="font-size: ${baseSize * 2.5}px; background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                ${fullName}
+            <div class="border-b-2 pb-8 mb-8" style="border-image: linear-gradient(90deg, ${colors.primary}, ${colors.secondary}) 1;">
+              <h1 class="font-bold mb-3" style="font-size: ${baseSize * 2.5}px; background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Mehdi Miri
               </h1>
-              <p class="mb-5 font-medium" style="font-size: ${baseSize * 1.3}px; color: ${primaryColor};">
-                ${translations[currentLanguage].jobTitle}
+              <p class="mb-5 font-medium" style="font-size: ${baseSize * 1.3}px; color: ${colors.primary};">
+                ${t.jobTitle}
               </p>
-              <div class="flex flex-wrap gap-5" style="font-size: ${baseSize}px; color: ${textColor};">
+              <div class="flex flex-wrap gap-5" style="font-size: ${baseSize}px; color: ${colors.text};">
                 <span class="flex items-center gap-2">
-                  <span style="color: ${primaryColor};">${translations[currentLanguage].emailLabel}</span>
-                  ${email}
+                  <span style="color: ${colors.primary};">${t.emailLabel}</span>
+                  mehdiporoki@gmail.com
                 </span>
                 <span class="flex items-center gap-2">
-                  <span style="color: ${primaryColor};">${translations[currentLanguage].phoneLabel}</span>
-                  ${phone}
+                  <span style="color: ${colors.primary};">${t.phoneLabel}</span>
+                  @Mitimm
                 </span>
                 <span class="flex items-center gap-2">
-                  <span style="color: ${primaryColor};">${translations[currentLanguage].locationLabel}</span>
-                  ${location}
+                  <span style="color: ${colors.primary};">${t.locationLabel}</span>
+                  Kermanshah, IR
                 </span>
               </div>
             </div>
 
             <!-- Summary with Accent -->
-            <div class="mb-10 p-6 rounded-xl" style="background: linear-gradient(135deg, ${primaryColor}10, ${secondaryColor}10); border-left: 4px solid ${primaryColor};">
-              <p style="font-size: ${baseSize * 1.05}px; line-height: 1.9; color: ${textColor};">
-                ${translations[currentLanguage].summary}
+            <div class="mb-10 p-6 rounded-xl" style="background: linear-gradient(135deg, ${colors.primary}10, ${colors.secondary}10); border-left: 4px solid ${colors.primary};">
+              <p style="font-size: ${baseSize * 1.05}px; line-height: 1.9; color: ${colors.text};">
+                ${t.summary}
               </p>
             </div>
 
             <!-- Education -->
             <div class="mb-10">
-              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
-                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
-                ${educationTitle}
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${colors.text};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${colors.primary}, ${colors.secondary});"></span>
+                ${c.educationTitle}
               </h2>
-              ${content[currentLanguage].education.map(edu => `
-                <div class="card-hover p-6 rounded-xl mb-4" style="background-color: ${backgroundColor}; border: 2px solid ${primaryColor}20;">
-                  <h3 class="font-bold mb-2" style="font-size: ${baseSize * 1.2}px; color: ${textColor};">
+              ${c.education.map(edu => `
+                <div class="card-hover p-6 rounded-xl mb-4" style="background-color: ${colors.background}; border: 2px solid ${colors.primary}20;">
+                  <h3 class="font-bold mb-2" style="font-size: ${baseSize * 1.2}px; color: ${colors.text};">
                     ${edu.degree}
                   </h3>
-                  <p class="mb-2 font-semibold" style="font-size: ${baseSize}px; color: ${primaryColor};">
+                  <p class="mb-2 font-semibold" style="font-size: ${baseSize}px; color: ${colors.primary};">
                     ${edu.school}
                   </p>
-                  <p class="mb-2" style="font-size: ${baseSize * 0.9}px; color: ${textColor}; opacity: 0.7;">
+                  <p class="mb-2" style="font-size: ${baseSize * 0.9}px; color: ${colors.text}; opacity: 0.7;">
                     📅 ${edu.period}
                   </p>
-                  <p class="px-4 py-2 rounded-lg inline-block" style="font-size: ${baseSize * 0.9}px; background: linear-gradient(135deg, ${primaryColor}15, ${secondaryColor}15); color: ${textColor}; font-style: italic;">
+                  <p class="px-4 py-2 rounded-lg inline-block" style="font-size: ${baseSize * 0.9}px; background: linear-gradient(135deg, ${colors.primary}15, ${colors.secondary}15); color: ${colors.text}; font-style: italic;">
                     ✨ ${edu.note}
                   </p>
                 </div>
@@ -452,22 +426,22 @@
 
             <!-- Skills -->
             <div class="mb-10">
-              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
-                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
-                ${skillsTitle}
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${colors.text};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${colors.primary}, ${colors.secondary});"></span>
+                ${c.skillsTitle}
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                ${content[currentLanguage].skillCategories.map(category => `
-                  <div class="card-hover p-6 rounded-xl" style="background: linear-gradient(135deg, ${backgroundColor}, ${surfaceColor}); border: 2px solid ${primaryColor}20; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <h3 class="font-bold mb-4 flex items-center gap-2" style="font-size: ${baseSize * 1.2}px; color: ${textColor};">
+                ${c.skillCategories.map(category => `
+                  <div class="card-hover p-6 rounded-xl" style="background: linear-gradient(135deg, ${colors.background}, ${colors.surface}); border: 2px solid ${colors.primary}20; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 class="font-bold mb-4 flex items-center gap-2" style="font-size: ${baseSize * 1.2}px; color: ${colors.text};">
                       <span style="font-size: ${baseSize * 1.5}px;">${category.icon}</span>
                       ${category.title}
                     </h3>
                     <div class="space-y-3">
                       ${category.skills.map(skill => `
-                        <div class="flex justify-between items-center skill-badge p-2 rounded-lg" style="font-size: ${baseSize * 0.95}px; background-color: ${surfaceColor};">
-                          <span style="color: ${textColor}; font-medium;">${skill.name}</span>
-                          <span class="px-3 py-1 rounded-full font-semibold" style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize * 0.8}px;">
+                        <div class="flex justify-between items-center skill-badge p-2 rounded-lg" style="font-size: ${baseSize * 0.95}px; background-color: ${colors.surface};">
+                          <span style="color: ${colors.text}; font-medium;">${skill.name}</span>
+                          <span class="px-3 py-1 rounded-full font-semibold" style="background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary}); color: ${colors.surface}; font-size: ${baseSize * 0.8}px;">
                             ${skill.level}
                           </span>
                         </div>
@@ -480,19 +454,19 @@
 
             <!-- Languages -->
             <div class="mb-10">
-              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
-                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
-                ${content[currentLanguage].languagesTitle}
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${colors.text};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${colors.primary}, ${colors.secondary});"></span>
+                ${c.languagesTitle}
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                ${content[currentLanguage].languages.map(lang => `
-                  <div class="card-hover flex items-center gap-4 p-5 rounded-xl" style="background: linear-gradient(135deg, ${backgroundColor}, ${surfaceColor}); border: 2px solid ${primaryColor}20;">
+                ${c.languages.map(lang => `
+                  <div class="card-hover flex items-center gap-4 p-5 rounded-xl" style="background: linear-gradient(135deg, ${colors.background}, ${colors.surface}); border: 2px solid ${colors.primary}20;">
                     <span style="font-size: ${baseSize * 2.5}px;">${lang.flag}</span>
                     <div>
-                      <div style="font-size: ${baseSize * 1.05}px; color: ${textColor}; font-weight: 700;">
+                      <div style="font-size: ${baseSize * 1.05}px; color: ${colors.text}; font-weight: 700;">
                         ${lang.name}
                       </div>
-                      <div style="font-size: ${baseSize * 0.85}px; color: ${primaryColor};">
+                      <div style="font-size: ${baseSize * 0.85}px; color: ${colors.primary};">
                         ${lang.level}
                       </div>
                     </div>
@@ -502,156 +476,86 @@
             </div>
 
             <!-- Contact -->
-            <div class="mb-6 p-8 rounded-xl" style="background: linear-gradient(135deg, ${primaryColor}15, ${secondaryColor}15);">
-              <h2 class="font-bold mb-4 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
-                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
-                ${content[currentLanguage].contactTitle}
+            <div class="mb-6 p-8 rounded-xl" style="background: linear-gradient(135deg, ${colors.primary}15, ${colors.secondary}15);">
+              <h2 class="font-bold mb-4 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${colors.text};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${colors.primary}, ${colors.secondary});"></span>
+                ${c.contactTitle}
               </h2>
-              <p class="mb-6" style="font-size: ${baseSize * 1.05}px; line-height: 1.7; color: ${textColor};">
-                ${content[currentLanguage].contactText}
+              <p class="mb-6" style="font-size: ${baseSize * 1.05}px; line-height: 1.7; color: ${colors.text};">
+                ${c.contactText}
               </p>
               <div class="flex flex-wrap gap-4">
                 <a href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary}); color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   💼 LinkedIn
                 </a>
                 <a href="https://github.com/mitrandier" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background-color: ${colors.text}; color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   🐙 GitHub
                 </a>
                 <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background-color: #25D366; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background-color: #25D366; color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   📱 WhatsApp
                 </a>
                 <a href="https://t.me/Mitimm" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background: linear-gradient(135deg, ${colors.primary}, ${colors.secondary}); color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   ✈️ Telegram
                 </a>
                 <a href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background-color: ${colors.text}; color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   📧 Email
                 </a>
                 <a href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" 
                    class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
-                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                   style="background-color: ${colors.text}; color: ${colors.surface}; font-size: ${baseSize}px; text-decoration: none;">
                   📝 Blog
                 </a>
               </div>
             </div>
 
             <!-- Footer -->
-            <div class="text-center pt-6 border-t-2" style="border-image: linear-gradient(90deg, ${primaryColor}, ${secondaryColor}) 1; font-size: ${baseSize * 0.9}px; color: ${textColor}; opacity: 0.7;">
-              ${content[currentLanguage].footer}
+            <div class="text-center pt-6 border-t-2" style="border-image: linear-gradient(90deg, ${colors.primary}, ${colors.secondary}) 1; font-size: ${baseSize * 0.9}px; color: ${colors.text}; opacity: 0.7;">
+              ${c.footer}
             </div>
           </div>
         </div>
       `;
 
-      updateButtonStyles(primaryColor, secondaryColor, surfaceColor, textColor, baseSize);
+      updateButtonStyles();
 
       document.getElementById('btn-en').addEventListener('click', () => switchLanguage('en'));
       document.getElementById('btn-de').addEventListener('click', () => switchLanguage('de'));
       document.getElementById('btn-fa').addEventListener('click', () => switchLanguage('fa'));
     }
 
-    function updateButtonStyles(primaryColor, secondaryColor, surfaceColor, textColor, baseSize) {
+    function updateButtonStyles() {
       const buttons = ['btn-en', 'btn-de', 'btn-fa'];
       const languages = ['en', 'de', 'fa'];
       
       buttons.forEach((btnId, index) => {
         const btn = document.getElementById(btnId);
         if (languages[index] === currentLanguage) {
-          btn.style.background = `linear-gradient(135deg, ${primaryColor}, ${secondaryColor})`;
-          btn.style.color = surfaceColor;
+          btn.style.background = `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`;
+          btn.style.color = colors.surface;
         } else {
-          btn.style.backgroundColor = surfaceColor;
-          btn.style.color = textColor;
+          btn.style.backgroundColor = colors.surface;
+          btn.style.color = colors.text;
         }
       });
     }
 
     function switchLanguage(lang) {
       currentLanguage = lang;
-      onConfigChange(window.elementSdk.config);
+      render();
     }
 
-    const element = {
-      defaultConfig,
-      onConfigChange,
-      mapToCapabilities: (config) => ({
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              config.surface_color = value;
-              window.elementSdk.setConfig({ surface_color: value });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-            set: (value) => {
-              config.primary_action_color = value;
-              window.elementSdk.setConfig({ primary_action_color: value });
-            }
-          },
-          {
-            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-            set: (value) => {
-              config.secondary_action_color = value;
-              window.elementSdk.setConfig({ secondary_action_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      }),
-      mapToEditPanelValues: (config) => new Map([
-        ["full_name", config.full_name || defaultConfig.full_name],
-        ["job_title", config.job_title || defaultConfig.job_title],
-        ["email", config.email || defaultConfig.email],
-        ["phone", config.phone || defaultConfig.phone],
-        ["location", config.location || defaultConfig.location],
-        ["summary_text", config.summary_text || defaultConfig.summary_text],
-        ["education_title", config.education_title || defaultConfig.education_title],
-        ["skills_title", config.skills_title || defaultConfig.skills_title]
-      ])
-    };
-
-    if (window.elementSdk) {
-      window.elementSdk.init(element);
-    }
+    // Initial render
+    render();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae06c37e6841717',t:'MTc2NTc0Mzg0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae0741505d766f9',t:'MTc2NTc0NDE2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
