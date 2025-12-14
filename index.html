@@ -3,12 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/1.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/1.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/1.png">
-  <link rel="icon" type="image/png" href="assets/1.png">
-
-  <title>Mehdi Miri Resume</title>
+  <title>Multilingual Resume</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -16,1239 +11,578 @@
       box-sizing: border-box;
     }
     
-    .resume-container {
-      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
-    
-    .section-divider {
-      height: 2px;
-      background: linear-gradient(to right, transparent, currentColor, transparent);
-      opacity: 0.2;
-    }
-    
-    .skill-badge {
-      transition: transform 0.2s ease;
-    }
-    
-    .skill-badge:hover {
-      transform: translateY(-2px);
-    }
-    
-    .lang-btn {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .lang-btn:hover {
-      transform: translateY(-2px);
-    }
-    
-    .lang-btn.active {
-      transform: scale(1.05);
-    }
-    
-    .content-section {
-      display: none;
-    }
-    
-    .content-section.active {
-      display: block;
-      animation: fadeIn 0.4s ease-in;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .rtl {
+    .rtl-text {
       direction: rtl;
       text-align: right;
     }
     
-    .ltr {
+    .ltr-text {
       direction: ltr;
       text-align: left;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    
+    .skill-badge {
+      transition: all 0.2s ease;
+    }
+    
+    .skill-badge:hover {
+      transform: scale(1.05);
+    }
+    
+    .gradient-border {
+      position: relative;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+      border: 3px solid transparent;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <main class="resume-container w-full h-full overflow-auto">
-   <div class="max-w-4xl mx-auto px-8 py-12">
-    <div class="flex justify-center gap-4 mb-8"><button class="lang-btn active px-6 py-3 rounded-lg font-bold text-lg" data-lang="en"> 🇬🇧 English </button> <button class="lang-btn px-6 py-3 rounded-lg font-bold text-lg" data-lang="de"> 🇩🇪 Deutsch </button> <button class="lang-btn px-6 py-3 rounded-lg font-bold text-lg" data-lang="fa"> 🇮🇷 فارسی </button>
-    </div>
-    <div class="content-section active ltr" data-content="en">
-     <header class="text-center mb-12">
-      <h1 id="full-name-en" class="text-5xl font-bold mb-3">Mehdi Miri</h1>
-      <p id="job-title-en" class="text-2xl mb-4">Beginner Backend Developer | AI Enthusiast | Seeking IT Ausbildung in Germany</p>
-      <p id="tagline-en" class="text-lg mb-6 max-w-2xl mx-auto">Passionate about AI, Blockchain, and modern programming technologies</p>
-      <div class="flex flex-wrap justify-center gap-6 text-base">
-       <div class="flex items-center gap-2"><span>📧</span> <a id="email-en" href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer">mehdiporoki@gmail.com</a>
-       </div>
-       <div class="flex items-center gap-2"><span>✈️</span> <span id="phone-en">TG:@Mitimm</span>
-       </div>
-       <div class="flex items-center gap-2"><span>📍</span> <span id="location-en"> Kermanshah, Ir </span>
-       </div>
-      </div>
-     </header>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <div class="section-divider mb-4"></div>
-      <p class="text-lg leading-relaxed mb-4">I am a motivated junior backend developer with a strong interest in problem-solving, continuous learning, and building scalable solutions.</p>
-      <p class="text-lg leading-relaxed mb-4">Currently, I focus on hands-on practice with Python and Go, working with databases, and implementing automation using n8n, which I apply in small practical projects such as AI-based chat applications using APIs.</p>
-      <p class="text-lg leading-relaxed mb-4">I have completed beginner-level online courses in Python, databases, and computer networking.</p>
-      <p class="text-lg leading-relaxed mb-4">My professional experience includes providing online user support for a cryptocurrency exchange (around 100 users), more than five years of experience as a blockchain and cryptocurrency analyst, and leading a Persian-language content production team, where I developed strong communication and organizational skills.</p>
-      <p class="text-lg leading-relaxed">I am currently seeking a practical IT or software development apprenticeship (Ausbildung) in Germany to further develop my technical skills in a professional environment.</p>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Work Experience</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-6">
-       <div class="border-l-4 pl-6 pb-6">
-        <div class="flex justify-between items-start mb-2">
-         <div>
-          <h3 class="text-xl font-bold">Senior Product Designer</h3>
-          <p class="text-lg">TechCorp Solutions</p>
-         </div><span class="text-base whitespace-nowrap">2020 - Present</span>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>Led design for mobile app redesign, increasing user engagement by 45%</li>
-         <li>Established design system used across 5 product teams</li>
-         <li>Mentored 3 junior designers and conducted design workshops</li>
-        </ul>
-       </div>
-       <div class="border-l-4 pl-6 pb-6">
-        <div class="flex justify-between items-start mb-2">
-         <div>
-          <h3 class="text-xl font-bold">Product Designer</h3>
-          <p class="text-lg">StartupXYZ</p>
-         </div><span class="text-base whitespace-nowrap">2017 - 2020</span>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>Designed end-to-end user flows for SaaS platform</li>
-         <li>Conducted user research with 50+ customers</li>
-        </ul>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Skills</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-8"><!-- Backend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">💻</span> Backend Development</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Python
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Go
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           SQL
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           APIs
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Git
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Linux Basics
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-        </div>
-       </div><!-- Frontend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎨</span> Frontend Development</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           HTML5
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           CSS3
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           JavaScript
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-        </div>
-       </div><!-- Blockchain & Crypto -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">⛓️</span> Blockchain &amp; Crypto</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Blockchain Analysis
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Crypto Trading
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Smart Contracts
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           NFT Portfolios
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Wallet Management
-          </div>
-          <div class="text-sm opacity-75">
-           Advanced
-          </div>
-         </div>
-        </div>
-       </div><!-- Artificial Intelligence -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🤖</span> Artificial Intelligence</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           AI Fundamentals
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Data Analysis
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Workflow Automation
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-        </div>
-       </div><!-- Networking -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🌐</span> Networking</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Network+
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Optical Fiber
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Firewalls
-          </div>
-          <div class="text-sm opacity-75">
-           Beginner
-          </div>
-         </div>
-        </div>
-       </div><!-- Multimedia Production -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎬</span> Multimedia Production</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Adobe Photoshop
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Adobe Premiere Pro
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Video Editing
-          </div>
-          <div class="text-sm opacity-75">
-           Intermediate
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Content Production
-          </div>
-          <div class="text-sm opacity-75">
-           Advanced
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Languages</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇮🇷
-        </div>
-        <h3 class="text-xl font-bold mb-1">Persian (Farsi)</h3>
-        <p class="text-base">Native / Bilingual Proficiency</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇩🇪
-        </div>
-        <h3 class="text-xl font-bold mb-1">German</h3>
-        <p class="text-base">Professional Working Proficiency (B2)</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇬🇧
-        </div>
-        <h3 class="text-xl font-bold mb-1">English</h3>
-        <p class="text-base">Limited Working Proficiency</p>
-        <p class="text-sm opacity-75 mt-1">Duolingo Score: 98</p>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Education</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="border-l-4 pl-6">
-       <div class="flex justify-between items-start mb-2">
-        <div>
-         <h3 class="text-xl font-bold">Bachelor of Information Technology</h3>
-         <p class="text-lg">Islamic Azad University of Hamedan </p>
-        </div><span class="text-base whitespace-nowrap">Sep 2016 – Jul 2022</span>
-       </div>
-       <p class="mt-2">Graduated with Honors • Bachelor’s Degree </p>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
-      <div class="section-divider mb-6"></div>
-      <p class="text-lg mb-6 leading-relaxed">I'm always open to discussing new opportunities, IT Ausbildung positions, or collaborations on backend and blockchain projects. Feel free to reach out!</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4"><a href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💼</span> <span class="font-bold text-lg">LinkedIn</span> </a> <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💬</span> <span class="font-bold text-lg">WhatsApp</span> </a> <a href="https://t.me/Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">✈️</span> <span class="font-bold text-lg">Telegram</span> </a> <a href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📧</span> <span class="font-bold text-lg">Email</span> </a> <a href="https://github.com/mitrandier" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💻</span> <span class="font-bold text-lg">GitHub</span> </a> <a href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📝</span> <span class="font-bold text-lg">Blog</span> </a>
-      </div>
-     </section>
-    </div><!-- German Content -->
-    <div class="content-section ltr" data-content="de">
-     <header class="text-center mb-12">
-      <h1 id="full-name-de" class="text-5xl font-bold mb-3">Mehdi Miri</h1>
-      <p id="job-title-de" class="text-2xl mb-4">Beginnender Backend-Entwickler | KI-Enthusiast | Suche IT-Ausbildung in Deutschland</p>
-      <p id="tagline-de" class="text-lg mb-6 max-w-2xl mx-auto">Leidenschaftlich für KI, Blockchain und moderne Programmierungstechnologien</p>
-      <div class="flex flex-wrap justify-center gap-6 text-base">
-       <div class="flex items-center gap-2"><span>📧</span> <a id="email-de" href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer">mehdiporoki@gmail.com</a>
-       </div>
-       <div class="flex items-center gap-2"><span>✈️</span> <span id="phone-de">TG:@Mitimm</span>
-       </div>
-       <div class="flex items-center gap-2"><span>📍</span> <span id="location-de">Kermanshah, Ir</span>
-       </div>
-      </div>
-     </header>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Über mich</h2>
-      <div class="section-divider mb-4"></div>
-      <p class="text-lg leading-relaxed mb-4">Ich bin ein motivierter Junior-Backend-Entwickler mit großem Interesse an Problemlösung, kontinuierlichem Lernen und der Entwicklung skalierbarer Softwarelösungen.</p>
-      <p class="text-lg leading-relaxed mb-4">Derzeit konzentriere ich mich auf praktische Arbeit mit Python und Go, den Umgang mit Datenbanken sowie die Umsetzung von Automatisierungen mit n8n. Diese Kenntnisse wende ich in kleinen Projekten an, zum Beispiel bei Chat-Anwendungen mit KI-APIs.</p>
-      <p class="text-lg leading-relaxed mb-4">Ich habe Online-Kurse auf Anfängerniveau in den Bereichen Python, Datenbanken und Computernetzwerke absolviert.</p>
-      <p class="text-lg leading-relaxed mb-4">Zu meiner Berufserfahrung gehören der Online-Support für Nutzer einer Kryptowährungsbörse (ca. 100 Nutzer), mehr als fünf Jahre Tätigkeit als Blockchain- und Krypto-Analyst sowie die Leitung eines Content-Teams in persischer Sprache. Dadurch konnte ich meine Kommunikations- und Organisationsfähigkeiten weiterentwickeln.</p>
-      <p class="text-lg leading-relaxed">Zurzeit suche ich eine praxisorientierte Ausbildung im Bereich IT oder Softwareentwicklung in Deutschland, um meine fachlichen Kenntnisse in einem professionellen Umfeld weiter auszubauen.</p>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Berufserfahrung</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-6">
-       <div class="border-l-4 pl-6 pb-6">
-        <div class="flex justify-between items-start mb-2">
-         <div>
-          <h3 class="text-xl font-bold">Senior Produktdesignerin</h3>
-          <p class="text-lg">TechCorp Solutions</p>
-         </div><span class="text-base whitespace-nowrap">2020 - Heute</span>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>Leitete das Design für mobile App-Neugestaltung, steigerte Nutzerengagement um 45%</li>
-         <li>Etablierte Designsystem für 5 Produktteams</li>
-         <li>Mentorierte 3 Junior-Designer und leitete Design-Workshops</li>
-        </ul>
-       </div>
-       <div class="border-l-4 pl-6 pb-6">
-        <div class="flex justify-between items-start mb-2">
-         <div>
-          <h3 class="text-xl font-bold">Produktdesignerin</h3>
-          <p class="text-lg">StartupXYZ</p>
-         </div><span class="text-base whitespace-nowrap">2017 - 2020</span>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>Gestaltete End-to-End-Benutzerflows für SaaS-Plattform</li>
-         <li>Führte Nutzerforschung mit über 50 Kunden durch</li>
-        </ul>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Fähigkeiten</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-8"><!-- Backend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">💻</span> Backend-Entwicklung</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Python
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Go
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           SQL
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           APIs
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Git
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Linux Grundlagen
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-        </div>
-       </div><!-- Frontend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎨</span> Frontend-Entwicklung</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           HTML5
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           CSS3
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           JavaScript
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-        </div>
-       </div><!-- Blockchain & Crypto -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">⛓️</span> Blockchain &amp; Krypto</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Blockchain-Analyse
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Krypto-Handel
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Smart Contracts
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           NFT-Portfolios
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Wallet-Verwaltung
-          </div>
-          <div class="text-sm opacity-75">
-           Experte
-          </div>
-         </div>
-        </div>
-       </div><!-- Artificial Intelligence -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🤖</span> Künstliche Intelligenz</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           KI-Grundlagen
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Datenanalyse
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Workflow-Automatisierung
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-        </div>
-       </div><!-- Networking -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🌐</span> Netzwerktechnik</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Network+
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Glasfaser
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Firewalls
-          </div>
-          <div class="text-sm opacity-75">
-           Anfänger
-          </div>
-         </div>
-        </div>
-       </div><!-- Multimedia Production -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎬</span> Multimedia-Produktion</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Adobe Photoshop
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Adobe Premiere Pro
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Videobearbeitung
-          </div>
-          <div class="text-sm opacity-75">
-           Fortgeschritten
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Content-Produktion
-          </div>
-          <div class="text-sm opacity-75">
-           Experte
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Sprachen</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇮🇷
-        </div>
-        <h3 class="text-xl font-bold mb-1">Persisch (Farsi)</h3>
-        <p class="text-base">Muttersprache / Zweisprachig</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇩🇪
-        </div>
-        <h3 class="text-xl font-bold mb-1">Deutsch</h3>
-        <p class="text-base">Berufliche Arbeitskenntnisse (B2)</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇬🇧
-        </div>
-        <h3 class="text-xl font-bold mb-1">Englisch</h3>
-        <p class="text-base">Eingeschränkte Arbeitskenntnisse</p>
-        <p class="text-sm opacity-75 mt-1">Duolingo-Punktzahl: 98</p>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Ausbildung</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="border-l-4 pl-6">
-       <div class="flex justify-between items-start mb-2">
-        <div>
-         <h3 class="text-xl font-bold">Bachelor of Information Technology</h3>
-         <p class="text-lg">Islamic Azad University of Hamedan </p>
-        </div><span class="text-base whitespace-nowrap">Sep 2016 – Jul 2022</span>
-       </div>
-       <p class="mt-2">Mit Auszeichnung abgeschlossen • DQR Niveau:6 &amp; Mein Hochschulabschluss wurde in Deutschland anerkannt.</p>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">Kontakt aufnehmen</h2>
-      <div class="section-divider mb-6"></div>
-      <p class="text-lg mb-6 leading-relaxed">Ich bin immer offen für Gespräche über neue Möglichkeiten, IT-Ausbildungspositionen oder Zusammenarbeit bei Backend- und Blockchain-Projekten. Zögern Sie nicht, mich zu kontaktieren!</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4"><a href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💼</span> <span class="font-bold text-lg">LinkedIn</span> </a> <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💬</span> <span class="font-bold text-lg">WhatsApp</span> </a> <a href="https://t.me/Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">✈️</span> <span class="font-bold text-lg">Telegram</span> </a> <a href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📧</span> <span class="font-bold text-lg">E-Mail</span> </a> <a href="https://github.com/mitrandier" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💻</span> <span class="font-bold text-lg">GitHub</span> </a> <a href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📝</span> <span class="font-bold text-lg">Blog</span> </a>
-      </div>
-     </section>
-    </div><!-- Persian Content -->
-    <div class="content-section rtl" data-content="fa">
-     <header class="text-center mb-12">
-      <h1 id="full-name-fa" class="text-5xl font-bold mb-3">مهدی میری</h1>
-      <p id="job-title-fa" class="text-2xl mb-4">توسعه‌دهنده بک‌اند مبتدی | علاقه‌مند به هوش مصنوعی | جویای آوسبیلدونگ IT در آلمان</p>
-      <p id="tagline-fa" class="text-lg mb-6 max-w-2xl mx-auto">علاقه‌مند به هوش مصنوعی، بلاکچین و فناوری‌های برنامه‌نویسی مدرن</p>
-      <div class="flex flex-wrap justify-center gap-6 text-base">
-       <div class="flex items-center gap-2"><span>📧</span> <a id="email-fa" href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer">mehdiporoki@gmail.com</a>
-       </div>
-       <div class="flex items-center gap-2"><span>✈️</span> <span id="phone-fa">TG:@Mitimm</span>
-       </div>
-       <div class="flex items-center gap-2"><span>📍</span> <span id="location-fa">کرمانشاه </span>
-       </div>
-      </div>
-     </header>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">درباره من</h2>
-      <div class="section-divider mb-4"></div>
-      <p class="text-lg leading-relaxed mb-4">من یک توسعه‌دهنده بک‌اند مبتدی و باانگیزه هستم که به حل مسئله، یادگیری مداوم ابزارهای جدید و ساخت راه‌حل‌های مقیاس‌پذیر علاقه دارم.</p>
-      <p class="text-lg leading-relaxed mb-4">در حال حاضر روی برنامه‌نویسی مقدماتی با Python و Go، کار با پایگاه‌های داده و پیاده‌سازی اتوماسیون با n8n تمرکز دارم و این مهارت‌ها را در قالب پروژه‌های کوچک، از جمله چت‌بات‌های مبتنی بر APIهای هوش مصنوعی، به‌صورت عملی تمرین می‌کنم.</p>
-      <p class="text-lg leading-relaxed mb-4">دوره‌های آنلاین مقدماتی در زمینه Python، پایگاه‌های داده و شبکه‌های کامپیوتری را گذرانده‌ام.</p>
-      <p class="text-lg leading-relaxed mb-4">تجربه کاری من شامل پشتیبانی آنلاین کاربران در یک صراف���� رمز ارزی (حدود ۱۰۰ کاربر)، بیش از ۵ سال فعالیت به‌عنوان تحلیلگر بلاکچین و رمزارز، و همچنین رهبری تیم تولید محتوا به زبان فارسی است که در آن مهارت‌های ارتباطی و مسئولیت‌پذیری خود را تقویت کرده‌ام.</p>
-      <p class="text-lg leading-relaxed">در حال حاضر به دنبال یک Ausbildung عملی در حوزه IT یا توسعه نرم‌افزار در آلمان هستم تا دانش فنی خود را در یک محیط حرفه‌ای توسعه دهم.</p>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">تجربه کاری</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-6">
-       <div class="border-r-4 pr-6 pb-6">
-        <div class="flex justify-between items-start mb-2"><span class="text-base whitespace-nowrap">۲۰۲۰ - اکنون</span>
-         <div class="text-right">
-          <h3 class="text-xl font-bold">طراح ارشد محصول</h3>
-          <p class="text-lg">تست</p>
-         </div>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>هدایت طراحی برای بازطراحی اپلیکیشن موبایل، افزایش تعامل کاربر به میزان ۴۵٪</li>
-         <li>ایجاد سیستم طراحی برای ۵ تیم محصول</li>
-         <li>مربیگری ۳ طراح جونیور و برگزاری کارگاه‌های طراحی</li>
-        </ul>
-       </div>
-       <div class="border-r-4 pr-6 pb-6">
-        <div class="flex justify-between items-start mb-2"><span class="text-base whitespace-nowrap">۲۰۱۷ - ۲۰۲۰</span>
-         <div class="text-right">
-          <h3 class="text-xl font-bold">طراح محصول</h3>
-          <p class="text-lg">استارتاپ ایکس‌وای‌زد</p>
-         </div>
-        </div>
-        <ul class="list-disc list-inside space-y-2 mt-3">
-         <li>طراحی جریان‌های کامل کاربر برای پلتفرم SaaS</li>
-         <li>انجام تحقیقات کاربری با بیش از ۵۰ مشتری</li>
-        </ul>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">مهارت‌ها</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="space-y-8"><!-- Backend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">💻</span> توسعه بک‌اند</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           پایتون
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           گو
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           SQL
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           API ها
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           گیت
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           مبانی لینوکس
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-        </div>
-       </div><!-- Frontend Development -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎨</span> توسعه فرانت‌اند</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           HTML5
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           CSS3
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           جاوااسکریپت
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-        </div>
-       </div><!-- Blockchain & Crypto -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">⛓️</span> بلاکچین و کریپتو</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           تحلیل بلاکچین
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           معامله کریپتو
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           قراردادهای هوشمند
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           پورتفولیوهای NFT
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           مدیریت کیف پول
-          </div>
-          <div class="text-sm opacity-75">
-           پیشرفته
-          </div>
-         </div>
-        </div>
-       </div><!-- Artificial Intelligence -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🤖</span> هوش مصنوعی</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           مبانی هوش مصنوعی
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           تحلیل داده
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           اتوماسیون گردش کار
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-        </div>
-       </div><!-- Networking -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🌐</span> شبکه‌سازی</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           Network+
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           فیبر نوری
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           فایروال‌ها
-          </div>
-          <div class="text-sm opacity-75">
-           مبتدی
-          </div>
-         </div>
-        </div>
-       </div><!-- Multimedia Production -->
-       <div>
-        <h3 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🎬</span> تولید چندرسانه‌ای</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           ادوبی فتوشاپ
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           ادوبی پریمیر
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           ویرایش ویدیو
-          </div>
-          <div class="text-sm opacity-75">
-           متوسط
-          </div>
-         </div>
-         <div class="skill-badge px-4 py-3 rounded-lg">
-          <div class="font-medium">
-           تولید محتوا
-          </div>
-          <div class="text-sm opacity-75">
-           پیشرفته
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">زبان‌ها</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇮🇷
-        </div>
-        <h3 class="text-xl font-bold mb-1">فارسی</h3>
-        <p class="text-base">زبان مادری / دوزبانه</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇩🇪
-        </div>
-        <h3 class="text-xl font-bold mb-1">آلمانی</h3>
-        <p class="text-base">تسلط حرفه‌ای (B2)</p>
-       </div>
-       <div class="skill-badge px-6 py-4 rounded-lg">
-        <div class="text-3xl mb-2">
-         🇬🇧
-        </div>
-        <h3 class="text-xl font-bold mb-1">انگلیسی</h3>
-        <p class="text-base">تسلط کاری محدود</p>
-        <p class="text-sm opacity-75 mt-1">امتیاز دولینگو: ۹۸</p>
-       </div>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">تحصیلات</h2>
-      <div class="section-divider mb-6"></div>
-      <div class="border-r-4 pr-6">
-       <div class="flex justify-between items-start mb-2"><span class="text-base whitespace-nowrap">۲۰۱۱ - ۲۰۱۵</span>
-        <div class="text-right">
-         <h3 class="text-xl font-bold">لیسانس هنرهای زیبا در طراحی گرافیک</h3>
-         <p class="text-lg">دانشگاه هنر و طراحی</p>
-        </div>
-       </div>
-       <p class="mt-2">فارغ‌التحصیل • معدل: ۳.۸/۴.۰</p>
-      </div>
-     </section>
-     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">بیایید در ارتباط باشیم</h2>
-      <div class="section-divider mb-6"></div>
-      <p class="text-lg mb-6 leading-relaxed">من همیشه آماده بحث درباره فرصت‌های جدید، موقعیت‌های آموزشی IT، یا همکاری در پروژه‌های بک‌اند و بلاکچین هستم. خوشحال می‌شوم با من در تماس باشید!</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4"><a href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💼</span> <span class="font-bold text-lg">لینکدین</span> </a> <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💬</span> <span class="font-bold text-lg">واتساپ</span> </a> <a href="https://t.me/Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">✈️</span> <span class="font-bold text-lg">تلگرام</span> </a> <a href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📧</span> <span class="font-bold text-lg">ایمیل</span> </a> <a href="https://github.com/mitrandier" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">💻</span> <span class="font-bold text-lg">گیت‌هاب</span> </a> <a href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" class="contact-card px-6 py-4 rounded-lg flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105"> <span class="text-4xl">📝</span> <span class="font-bold text-lg">بلاگ</span> </a>
-      </div>
-     </section>
-    </div>
-   </div>
-   <footer class="footer-section py-6 text-center border-t-2 mt-12">
-    <p class="footer-text text-base">© 2025 Mehdi Miri</p>
-   </footer>
-  </main>
+  <div id="app" class="w-full h-full overflow-auto"></div>
   <script>
     const defaultConfig = {
       background_color: "#f0f4f8",
       surface_color: "#ffffff",
       text_color: "#1e293b",
-      primary_color: "#2563eb",
-      accent_color: "#7c3aed",
+      primary_action_color: "#3b82f6",
+      secondary_action_color: "#8b5cf6",
       font_family: "Inter",
       font_size: 16,
       full_name: "Mehdi Miri",
-      job_title_en: "Beginner Backend Developer | AI Enthusiast | Seeking IT Ausbildung in Germany",
-      job_title_de: "Beginnender Backend-Entwickler | KI-Enthusiast | Suche IT-Ausbildung in Deutschland",
-      job_title_fa: "توسعه‌دهنده بک‌اند مبتدی | علاقه‌مند به هوش مصنوعی | جویای آوسبیلدونگ IT در آلمان",
-      tagline_en: "Passionate about AI, Blockchain, and modern programming technologies",
-      tagline_de: "Leidenschaftlich für KI, Blockchain und moderne Programmierungstechnologien",
-      tagline_fa: "علاقه‌مند به هوش مصنوعی، بلاکچین و فناوری‌های برنامه‌نویسی مدرن",
+      job_title: "Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany",
       email: "mehdiporoki@gmail.com",
       phone: "@Mitimm",
-      location: "Kermanshah, Ir"
+      location: "Kermanshah, IR",
+      summary_text: "I am a motivated junior backend developer with a strong interest in problem-solving, continuous learning, and building scalable solutions.",
+      education_title: "Education",
+      skills_title: "Skills"
     };
 
-    let currentLang = 'en';
+    let currentLanguage = 'en';
+
+    const translations = {
+      en: {
+        jobTitle: "Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany",
+        summary: "I am a motivated junior backend developer with a strong interest in problem-solving, continuous learning, and building scalable solutions. Currently, I focus on hands-on practice with Python and Go, working with databases, and implementing automation using n8n, which I apply in small practical projects such as AI-based chat applications using APIs. I have completed beginner-level online courses in Python, databases, and computer networking. My professional experience includes providing online user support for a cryptocurrency exchange (around 100 users), more than five years of experience as a blockchain and cryptocurrency analyst, and leading a Persian-language content production team, where I developed strong communication and organizational skills. I am currently seeking a practical IT or software development apprenticeship (Ausbildung) in Germany to further develop my technical skills in a professional environment.",
+        emailLabel: "✉️",
+        phoneLabel: "📱 Telegram:",
+        locationLabel: "📍"
+      },
+      de: {
+        jobTitle: "Beginnender Backend-Entwickler | KI-Enthusiast | Suche IT-Ausbildung in Deutschland",
+        summary: "Ich bin ein motivierter Junior-Backend-Entwickler mit großem Interesse an Problemlösung, kontinuierlichem Lernen und der Entwicklung skalierbarer Softwarelösungen. Derzeit konzentriere ich mich auf praktische Arbeit mit Python und Go, den Umgang mit Datenbanken sowie die Umsetzung von Automatisierungen mit n8n. Diese Kenntnisse wende ich in kleinen Projekten an, zum Beispiel bei Chat-Anwendungen mit KI-APIs. Ich habe Online-Kurse auf Anfängerniveau in den Bereichen Python, Datenbanken und Computernetzwerke absolviert. Zu meiner Berufserfahrung gehören der Online-Support für Nutzer einer Kryptowährungsbörse (ca. 100 Nutzer), mehr als fünf Jahre Tätigkeit als Blockchain- und Krypto-Analyst sowie die Leitung eines Content-Teams in persischer Sprache. Dadurch konnte ich meine Kommunikations- und Organisationsfähigkeiten weiterentwickeln. Zurzeit suche ich eine praxisorientierte Ausbildung im Bereich IT oder Softwareentwicklung in Deutschland, um meine fachlichen Kenntnisse in einem professionellen Umfeld weiter auszubauen.",
+        emailLabel: "✉️",
+        phoneLabel: "📱 Telegram:",
+        locationLabel: "📍"
+      },
+      fa: {
+        jobTitle: "توسعه‌دهنده بک‌اند مبتدی | علاقه‌مند به هوش مصنوعی | جویای آوسبیلدونگ IT در آلمان",
+        summary: "من یک توسعه‌دهنده بک‌اند مبتدی و باانگیزه هستم که به حل مسئله، یادگیری مداوم ابزارهای جدید و ساخت راه‌حل‌های مقیاس‌پذیر علاقه دارم. در حال حاضر روی برنامه‌نویسی مقدماتی با Python و Go، کار با پایگاه‌های داده و پیاده‌سازی اتوماسیون با n8n تمرکز دارم و این مهارت‌ها را در قالب پروژه‌های کوچک، از جمله چت‌بات‌های مبتنی بر APIهای هوش مصنوعی، به‌صورت عملی تمرین می‌کنم. دوره‌های آنلاین مقدماتی در زمینه Python، پایگاه‌های داده و شبکه‌های کامپیوتری را گذرانده‌ام. تجربه کاری من شامل پشتیبانی آنلاین کاربران در یک صرافی رمز ارزی (حدود ۱۰۰ کاربر)، بیش از ۵ سال فعالیت به‌عنوان تحلیلگر بلاکچین و رمزارز، و همچنین رهبری تیم تولید محتوا به زبان فارسی است که در آن مهارت‌های ارتباطی و مسئولیت‌پذیری خود را تقویت کرده‌ام. در حال حاضر به دنبال یک Ausbildung عملی در حوزه IT یا توسعه نرم‌افزار در آلمان هستم تا دانش فنی خود را در یک محیط حرفه‌ای توسعه دهم.",
+        emailLabel: "📧",
+        phoneLabel: "📱 تلگرام:",
+        locationLabel: "📍"
+      }
+    };
+
+    const content = {
+      en: {
+        education: [
+          {
+            degree: "Bachelor of Information Technology",
+            school: "Islamic Azad University of Hamedan",
+            period: "Sep 2016 – Jul 2022",
+            note: "With Distinction • DQR Level: 6 • Degree recognized in Germany"
+          }
+        ],
+        skillCategories: [
+          {
+            icon: "💻",
+            title: "Backend Development",
+            skills: [
+              { name: "Python", level: "Beginner" },
+              { name: "Go", level: "Beginner" },
+              { name: "SQL", level: "Beginner" },
+              { name: "APIs", level: "Intermediate" },
+              { name: "Git", level: "Beginner" },
+              { name: "Linux Basics", level: "Beginner" }
+            ]
+          },
+          {
+            icon: "🎨",
+            title: "Frontend Development",
+            skills: [
+              { name: "HTML5", level: "Intermediate" },
+              { name: "CSS3", level: "Intermediate" },
+              { name: "JavaScript", level: "Beginner" }
+            ]
+          },
+          {
+            icon: "⛓️",
+            title: "Blockchain & Crypto",
+            skills: [
+              { name: "Blockchain Analysis", level: "Intermediate" },
+              { name: "Crypto Trading", level: "Intermediate" },
+              { name: "Smart Contracts", level: "Intermediate" },
+              { name: "NFT Portfolios", level: "Intermediate" },
+              { name: "Wallet Management", level: "Advanced" }
+            ]
+          },
+          {
+            icon: "🤖",
+            title: "Artificial Intelligence",
+            skills: [
+              { name: "AI Fundamentals", level: "Beginner" },
+              { name: "Data Analysis", level: "Beginner" },
+              { name: "Workflow Automation", level: "Intermediate" }
+            ]
+          },
+          {
+            icon: "🌐",
+            title: "Networking",
+            skills: [
+              { name: "Network+", level: "Intermediate" },
+              { name: "Optical Fiber", level: "Beginner" },
+              { name: "Firewalls", level: "Beginner" }
+            ]
+          },
+          {
+            icon: "🎬",
+            title: "Multimedia Production",
+            skills: [
+              { name: "Adobe Photoshop", level: "Intermediate" },
+              { name: "Adobe Premiere Pro", level: "Intermediate" },
+              { name: "Video Editing", level: "Intermediate" },
+              { name: "Content Production", level: "Advanced" }
+            ]
+          }
+        ],
+        languages: [
+          { flag: "🇮🇷", name: "Persian (Farsi)", level: "Native / Bilingual Proficiency" },
+          { flag: "🇩🇪", name: "German", level: "Professional Working Proficiency (B2)" },
+          { flag: "🇬🇧", name: "English", level: "Limited Working Proficiency (Duolingo Score: 98)" }
+        ],
+        languagesTitle: "Languages",
+        contactTitle: "Let's Connect",
+        contactText: "I'm always open to discussing new opportunities, IT Ausbildung positions, or collaborations on backend and blockchain projects. Feel free to reach out!",
+        footer: "© 2025 Mehdi Miri"
+      },
+      de: {
+        education: [
+          {
+            degree: "Bachelor of Information Technology",
+            school: "Islamische Azad-Universität Hamadan",
+            period: "Sep 2016 – Jul 2022",
+            note: "Mit Auszeichnung abgeschlossen • DQR Niveau: 6 • Hochschulabschluss in Deutschland anerkannt"
+          }
+        ],
+        skillCategories: [
+          {
+            icon: "💻",
+            title: "Backend-Entwicklung",
+            skills: [
+              { name: "Python", level: "Anfänger" },
+              { name: "Go", level: "Anfänger" },
+              { name: "SQL", level: "Anfänger" },
+              { name: "APIs", level: "Fortgeschritten" },
+              { name: "Git", level: "Anfänger" },
+              { name: "Linux-Grundlagen", level: "Anfänger" }
+            ]
+          },
+          {
+            icon: "🎨",
+            title: "Frontend-Entwicklung",
+            skills: [
+              { name: "HTML5", level: "Fortgeschritten" },
+              { name: "CSS3", level: "Fortgeschritten" },
+              { name: "JavaScript", level: "Anfänger" }
+            ]
+          },
+          {
+            icon: "⛓️",
+            title: "Blockchain & Krypto",
+            skills: [
+              { name: "Blockchain-Analyse", level: "Fortgeschritten" },
+              { name: "Krypto-Trading", level: "Fortgeschritten" },
+              { name: "Smart Contracts", level: "Fortgeschritten" },
+              { name: "NFT-Portfolios", level: "Fortgeschritten" },
+              { name: "Wallet-Management", level: "Experte" }
+            ]
+          },
+          {
+            icon: "🤖",
+            title: "Künstliche Intelligenz",
+            skills: [
+              { name: "KI-Grundlagen", level: "Anfänger" },
+              { name: "Datenanalyse", level: "Anfänger" },
+              { name: "Workflow-Automatisierung", level: "Fortgeschritten" }
+            ]
+          },
+          {
+            icon: "🌐",
+            title: "Netzwerktechnik",
+            skills: [
+              { name: "Network+", level: "Fortgeschritten" },
+              { name: "Glasfaser", level: "Anfänger" },
+              { name: "Firewalls", level: "Anfänger" }
+            ]
+          },
+          {
+            icon: "🎬",
+            title: "Multimedia-Produktion",
+            skills: [
+              { name: "Adobe Photoshop", level: "Fortgeschritten" },
+              { name: "Adobe Premiere Pro", level: "Fortgeschritten" },
+              { name: "Videobearbeitung", level: "Fortgeschritten" },
+              { name: "Content-Produktion", level: "Experte" }
+            ]
+          }
+        ],
+        languages: [
+          { flag: "🇮🇷", name: "Persisch (Farsi)", level: "Muttersprache" },
+          { flag: "🇩🇪", name: "Deutsch", level: "Fließend in Wort und Schrift (B2)" },
+          { flag: "🇬🇧", name: "Englisch", level: "Grundkenntnisse (Duolingo-Score: 98)" }
+        ],
+        languagesTitle: "Sprachen",
+        contactTitle: "Kontakt aufnehmen",
+        contactText: "Ich bin immer offen für Gespräche über neue Möglichkeiten, IT-Ausbildungsplätze oder Zusammenarbeit an Backend- und Blockchain-Projekten. Kontaktieren Sie mich gerne!",
+        footer: "© 2025 Mehdi Miri"
+      },
+      fa: {
+        education: [
+          {
+            degree: "کارشناسی فناوری اطلاعات",
+            school: "دانشگاه آزاد اسلامی همدان",
+            period: "شهریور ۱۳۹۵ – تیر ۱۴۰۱",
+            note: "فارغ‌التحصیل با درجه عالی • سطح DQR: ۶ • مدرک در آلمان به رسمیت شناخته شده"
+          }
+        ],
+        skillCategories: [
+          {
+            icon: "💻",
+            title: "توسعه بک‌اند",
+            skills: [
+              { name: "Python", level: "مبتدی" },
+              { name: "Go", level: "مبتدی" },
+              { name: "SQL", level: "مبتدی" },
+              { name: "APIs", level: "متوسط" },
+              { name: "Git", level: "مبتدی" },
+              { name: "مبانی Linux", level: "مبتدی" }
+            ]
+          },
+          {
+            icon: "🎨",
+            title: "توسعه فرانت‌اند",
+            skills: [
+              { name: "HTML5", level: "متوسط" },
+              { name: "CSS3", level: "متوسط" },
+              { name: "JavaScript", level: "مبتدی" }
+            ]
+          },
+          {
+            icon: "⛓️",
+            title: "بلاکچین و کریپتو",
+            skills: [
+              { name: "تحلیل بلاکچین", level: "متوسط" },
+              { name: "معامله کریپتو", level: "متوسط" },
+              { name: "قراردادهای هوشمند", level: "متوسط" },
+              { name: "پورتفولیو NFT", level: "متوسط" },
+              { name: "مدیریت کیف پول", level: "پیشرفته" }
+            ]
+          },
+          {
+            icon: "🤖",
+            title: "هوش مصنوعی",
+            skills: [
+              { name: "مبانی هوش مصنوعی", level: "مبتدی" },
+              { name: "تحلیل داده", level: "مبتدی" },
+              { name: "اتوماسیون گردش کار", level: "متوسط" }
+            ]
+          },
+          {
+            icon: "🌐",
+            title: "شبکه",
+            skills: [
+              { name: "Network+", level: "متوسط" },
+              { name: "فیبر نوری", level: "مبتدی" },
+              { name: "فایروال", level: "مبتدی" }
+            ]
+          },
+          {
+            icon: "🎬",
+            title: "تولید چندرسانه‌ای",
+            skills: [
+              { name: "Adobe Photoshop", level: "متوسط" },
+              { name: "Adobe Premiere Pro", level: "متوسط" },
+              { name: "ویرایش ویدیو", level: "متوسط" },
+              { name: "تولید محتوا", level: "پیشرفته" }
+            ]
+          }
+        ],
+        languages: [
+          { flag: "🇮🇷", name: "فارسی", level: "زبان مادری" },
+          { flag: "🇩🇪", name: "آلمانی", level: "مسلط حرفه‌ای (B2)" },
+          { flag: "🇬🇧", name: "انگلیسی", level: "مهارت محدود کاری (نمره دولینگو: ۹۸)" }
+        ],
+        languagesTitle: "زبان‌ها",
+        contactTitle: "بیایید در ارتباط باشیم",
+        contactText: "من همیشه آماده بحث درباره فرصت‌های جدید، موقعیت‌های آوسبیلدونگ IT، یا همکاری در پروژه‌های بک‌اند و بلاکچین هستم. خوشحال می‌شوم با من در تماس باشید!",
+        footer: "© ۲۰۲۵ مهدی میری"
+      }
+    };
 
     async function onConfigChange(config) {
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'system-ui, -apple-system, sans-serif';
+      const fontFamily = `${customFont}, ${baseFontStack}`;
+
       const backgroundColor = config.background_color || defaultConfig.background_color;
       const surfaceColor = config.surface_color || defaultConfig.surface_color;
       const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_color || defaultConfig.primary_color;
-      const accentColor = config.accent_color || defaultConfig.accent_color;
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseSize = config.font_size || defaultConfig.font_size;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
 
-      document.body.style.backgroundColor = backgroundColor;
-      document.body.style.color = textColor;
+      const fullName = config.full_name || defaultConfig.full_name;
+      const email = config.email || defaultConfig.email;
+      const phone = config.phone || defaultConfig.phone;
+      const location = config.location || defaultConfig.location;
+      const educationTitle = config.education_title || defaultConfig.education_title;
+      const skillsTitle = config.skills_title || defaultConfig.skills_title;
 
-      const container = document.querySelector('.resume-container');
-      container.style.fontFamily = `${customFont}, 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif`;
+      const directionClass = currentLanguage === 'fa' ? 'rtl-text' : 'ltr-text';
 
-      // Update English content
-      document.getElementById('full-name-en').textContent = config.full_name || defaultConfig.full_name;
-      document.getElementById('full-name-en').style.fontSize = `${baseSize * 2}px`;
-      document.getElementById('full-name-en').style.color = primaryColor;
+      const app = document.getElementById('app');
+      app.style.backgroundColor = backgroundColor;
+      app.style.fontFamily = fontFamily;
+      app.style.color = textColor;
+      app.style.fontSize = `${baseSize}px`;
 
-      document.getElementById('job-title-en').textContent = config.job_title_en || defaultConfig.job_title_en;
-      document.getElementById('job-title-en').style.fontSize = `${baseSize * 1.5}px`;
-      document.getElementById('job-title-en').style.color = accentColor;
+      app.innerHTML = `
+        <div class="max-w-5xl mx-auto p-8">
+          <!-- Language Tabs -->
+          <div class="flex gap-3 mb-10 justify-center fade-in">
+            <button id="btn-en" class="px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg" style="font-size: ${baseSize}px;">
+              🇬🇧 English
+            </button>
+            <button id="btn-de" class="px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg" style="font-size: ${baseSize}px;">
+              🇩🇪 Deutsch
+            </button>
+            <button id="btn-fa" class="px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg" style="font-size: ${baseSize}px;">
+              🇮🇷 فارسی
+            </button>
+          </div>
 
-      document.getElementById('tagline-en').textContent = config.tagline_en || defaultConfig.tagline_en;
-      document.getElementById('tagline-en').style.fontSize = `${baseSize * 1.125}px`;
+          <!-- Resume Content -->
+          <div id="resume-content" class="rounded-2xl shadow-2xl p-10 ${directionClass} fade-in" style="background: linear-gradient(135deg, ${surfaceColor} 0%, ${surfaceColor}f5 100%);">
+            <!-- Header with Gradient -->
+            <div class="border-b-2 pb-8 mb-8" style="border-image: linear-gradient(90deg, ${primaryColor}, ${secondaryColor}) 1;">
+              <h1 class="font-bold mb-3" style="font-size: ${baseSize * 2.5}px; background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                ${fullName}
+              </h1>
+              <p class="mb-5 font-medium" style="font-size: ${baseSize * 1.3}px; color: ${primaryColor};">
+                ${translations[currentLanguage].jobTitle}
+              </p>
+              <div class="flex flex-wrap gap-5" style="font-size: ${baseSize}px; color: ${textColor};">
+                <span class="flex items-center gap-2">
+                  <span style="color: ${primaryColor};">${translations[currentLanguage].emailLabel}</span>
+                  ${email}
+                </span>
+                <span class="flex items-center gap-2">
+                  <span style="color: ${primaryColor};">${translations[currentLanguage].phoneLabel}</span>
+                  ${phone}
+                </span>
+                <span class="flex items-center gap-2">
+                  <span style="color: ${primaryColor};">${translations[currentLanguage].locationLabel}</span>
+                  ${location}
+                </span>
+              </div>
+            </div>
 
-      const emailEnElement = document.getElementById('email-en');
-      emailEnElement.textContent = config.email || defaultConfig.email;
-      emailEnElement.href = `mailto:${config.email || defaultConfig.email}`;
-      emailEnElement.style.color = primaryColor;
+            <!-- Summary with Accent -->
+            <div class="mb-10 p-6 rounded-xl" style="background: linear-gradient(135deg, ${primaryColor}10, ${secondaryColor}10); border-left: 4px solid ${primaryColor};">
+              <p style="font-size: ${baseSize * 1.05}px; line-height: 1.9; color: ${textColor};">
+                ${translations[currentLanguage].summary}
+              </p>
+            </div>
 
-      document.getElementById('phone-en').textContent = config.phone || defaultConfig.phone;
-      document.getElementById('location-en').textContent = config.location || defaultConfig.location;
+            <!-- Education -->
+            <div class="mb-10">
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
+                ${educationTitle}
+              </h2>
+              ${content[currentLanguage].education.map(edu => `
+                <div class="card-hover p-6 rounded-xl mb-4" style="background-color: ${backgroundColor}; border: 2px solid ${primaryColor}20;">
+                  <h3 class="font-bold mb-2" style="font-size: ${baseSize * 1.2}px; color: ${textColor};">
+                    ${edu.degree}
+                  </h3>
+                  <p class="mb-2 font-semibold" style="font-size: ${baseSize}px; color: ${primaryColor};">
+                    ${edu.school}
+                  </p>
+                  <p class="mb-2" style="font-size: ${baseSize * 0.9}px; color: ${textColor}; opacity: 0.7;">
+                    📅 ${edu.period}
+                  </p>
+                  <p class="px-4 py-2 rounded-lg inline-block" style="font-size: ${baseSize * 0.9}px; background: linear-gradient(135deg, ${primaryColor}15, ${secondaryColor}15); color: ${textColor}; font-style: italic;">
+                    ✨ ${edu.note}
+                  </p>
+                </div>
+              `).join('')}
+            </div>
 
-      // Update German content
-      document.getElementById('full-name-de').textContent = config.full_name || defaultConfig.full_name;
-      document.getElementById('full-name-de').style.fontSize = `${baseSize * 2}px`;
-      document.getElementById('full-name-de').style.color = primaryColor;
+            <!-- Skills -->
+            <div class="mb-10">
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
+                ${skillsTitle}
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                ${content[currentLanguage].skillCategories.map(category => `
+                  <div class="card-hover p-6 rounded-xl" style="background: linear-gradient(135deg, ${backgroundColor}, ${surfaceColor}); border: 2px solid ${primaryColor}20; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 class="font-bold mb-4 flex items-center gap-2" style="font-size: ${baseSize * 1.2}px; color: ${textColor};">
+                      <span style="font-size: ${baseSize * 1.5}px;">${category.icon}</span>
+                      ${category.title}
+                    </h3>
+                    <div class="space-y-3">
+                      ${category.skills.map(skill => `
+                        <div class="flex justify-between items-center skill-badge p-2 rounded-lg" style="font-size: ${baseSize * 0.95}px; background-color: ${surfaceColor};">
+                          <span style="color: ${textColor}; font-medium;">${skill.name}</span>
+                          <span class="px-3 py-1 rounded-full font-semibold" style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize * 0.8}px;">
+                            ${skill.level}
+                          </span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
 
-      document.getElementById('job-title-de').textContent = config.job_title_de || defaultConfig.job_title_de;
-      document.getElementById('job-title-de').style.fontSize = `${baseSize * 1.5}px`;
-      document.getElementById('job-title-de').style.color = accentColor;
+            <!-- Languages -->
+            <div class="mb-10">
+              <h2 class="font-bold mb-6 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
+                ${content[currentLanguage].languagesTitle}
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                ${content[currentLanguage].languages.map(lang => `
+                  <div class="card-hover flex items-center gap-4 p-5 rounded-xl" style="background: linear-gradient(135deg, ${backgroundColor}, ${surfaceColor}); border: 2px solid ${primaryColor}20;">
+                    <span style="font-size: ${baseSize * 2.5}px;">${lang.flag}</span>
+                    <div>
+                      <div style="font-size: ${baseSize * 1.05}px; color: ${textColor}; font-weight: 700;">
+                        ${lang.name}
+                      </div>
+                      <div style="font-size: ${baseSize * 0.85}px; color: ${primaryColor};">
+                        ${lang.level}
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
 
-      document.getElementById('tagline-de').textContent = config.tagline_de || defaultConfig.tagline_de;
-      document.getElementById('tagline-de').style.fontSize = `${baseSize * 1.125}px`;
+            <!-- Contact -->
+            <div class="mb-6 p-8 rounded-xl" style="background: linear-gradient(135deg, ${primaryColor}15, ${secondaryColor}15);">
+              <h2 class="font-bold mb-4 flex items-center gap-3" style="font-size: ${baseSize * 1.8}px; color: ${textColor};">
+                <span class="w-2 h-8 rounded-full" style="background: linear-gradient(180deg, ${primaryColor}, ${secondaryColor});"></span>
+                ${content[currentLanguage].contactTitle}
+              </h2>
+              <p class="mb-6" style="font-size: ${baseSize * 1.05}px; line-height: 1.7; color: ${textColor};">
+                ${content[currentLanguage].contactText}
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  💼 LinkedIn
+                </a>
+                <a href="https://github.com/mitrandier" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  🐙 GitHub
+                </a>
+                <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background-color: #25D366; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  📱 WhatsApp
+                </a>
+                <a href="https://t.me/Mitimm" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  ✈️ Telegram
+                </a>
+                <a href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  📧 Email
+                </a>
+                <a href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" 
+                   class="px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-md hover:shadow-lg" 
+                   style="background-color: ${textColor}; color: ${surfaceColor}; font-size: ${baseSize}px; text-decoration: none;">
+                  📝 Blog
+                </a>
+              </div>
+            </div>
 
-      const emailDeElement = document.getElementById('email-de');
-      emailDeElement.textContent = config.email || defaultConfig.email;
-      emailDeElement.href = `mailto:${config.email || defaultConfig.email}`;
-      emailDeElement.style.color = primaryColor;
+            <!-- Footer -->
+            <div class="text-center pt-6 border-t-2" style="border-image: linear-gradient(90deg, ${primaryColor}, ${secondaryColor}) 1; font-size: ${baseSize * 0.9}px; color: ${textColor}; opacity: 0.7;">
+              ${content[currentLanguage].footer}
+            </div>
+          </div>
+        </div>
+      `;
 
-      document.getElementById('phone-de').textContent = config.phone || defaultConfig.phone;
-      document.getElementById('location-de').textContent = config.location || defaultConfig.location;
+      updateButtonStyles(primaryColor, secondaryColor, surfaceColor, textColor, baseSize);
 
-      // Update Persian content
-      document.getElementById('full-name-fa').textContent = config.full_name || defaultConfig.full_name;
-      document.getElementById('full-name-fa').style.fontSize = `${baseSize * 2}px`;
-      document.getElementById('full-name-fa').style.color = primaryColor;
-
-      document.getElementById('job-title-fa').textContent = config.job_title_fa || defaultConfig.job_title_fa;
-      document.getElementById('job-title-fa').style.fontSize = `${baseSize * 1.5}px`;
-      document.getElementById('job-title-fa').style.color = accentColor;
-
-      document.getElementById('tagline-fa').textContent = config.tagline_fa || defaultConfig.tagline_fa;
-      document.getElementById('tagline-fa').style.fontSize = `${baseSize * 1.125}px`;
-
-      const emailFaElement = document.getElementById('email-fa');
-      emailFaElement.textContent = config.email || defaultConfig.email;
-      emailFaElement.href = `mailto:${config.email || defaultConfig.email}`;
-      emailFaElement.style.color = primaryColor;
-
-      document.getElementById('phone-fa').textContent = config.phone || defaultConfig.phone;
-      document.getElementById('location-fa').textContent = config.location || defaultConfig.location;
-
-      // Update all headings
-      document.querySelectorAll('h1').forEach(el => {
-        el.style.fontSize = `${baseSize * 2}px`;
-      });
-
-      document.querySelectorAll('h2').forEach(el => {
-        el.style.fontSize = `${baseSize * 1.875}px`;
-        el.style.color = textColor;
-      });
-
-      document.querySelectorAll('h3').forEach(el => {
-        el.style.fontSize = `${baseSize * 1.25}px`;
-      });
-
-      document.querySelectorAll('p, li, span').forEach(el => {
-        if (!el.id) {
-          el.style.fontSize = `${baseSize}px`;
-        }
-      });
-
-      document.querySelectorAll('.text-lg').forEach(el => {
-        el.style.fontSize = `${baseSize * 1.125}px`;
-      });
-
-      // Update language buttons
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.style.backgroundColor = surfaceColor;
-        btn.style.color = textColor;
-        btn.style.border = `2px solid ${primaryColor}`;
-        
-        if (btn.classList.contains('active')) {
-          btn.style.backgroundColor = primaryColor;
-          btn.style.color = '#ffffff';
-        }
-      });
-
-      // Update dividers and borders
-      document.querySelectorAll('.section-divider').forEach(el => {
-        el.style.color = primaryColor;
-      });
-
-      document.querySelectorAll('.border-l-4, .border-r-4').forEach(el => {
-        el.style.borderColor = primaryColor;
-      });
-
-      // Update skill badges
-      document.querySelectorAll('.skill-badge').forEach(badge => {
-        badge.style.backgroundColor = surfaceColor;
-        badge.style.color = textColor;
-        badge.style.border = `2px solid ${primaryColor}`;
-      });
-
-      // Update contact cards
-      document.querySelectorAll('.contact-card').forEach(card => {
-        card.style.backgroundColor = surfaceColor;
-        card.style.color = textColor;
-        card.style.border = `2px solid ${primaryColor}`;
-      });
-
-      // Update footer
-      const footer = document.querySelector('.footer-section');
-      if (footer) {
-        footer.style.borderColor = primaryColor;
-      }
-      
-      const footerText = document.querySelector('.footer-text');
-      if (footerText) {
-        footerText.style.color = textColor;
-        footerText.style.fontSize = `${baseSize}px`;
-      }
+      document.getElementById('btn-en').addEventListener('click', () => switchLanguage('en'));
+      document.getElementById('btn-de').addEventListener('click', () => switchLanguage('de'));
+      document.getElementById('btn-fa').addEventListener('click', () => switchLanguage('fa'));
     }
 
-    function mapToCapabilities(config) {
-      return {
+    function updateButtonStyles(primaryColor, secondaryColor, surfaceColor, textColor, baseSize) {
+      const buttons = ['btn-en', 'btn-de', 'btn-fa'];
+      const languages = ['en', 'de', 'fa'];
+      
+      buttons.forEach((btnId, index) => {
+        const btn = document.getElementById(btnId);
+        if (languages[index] === currentLanguage) {
+          btn.style.background = `linear-gradient(135deg, ${primaryColor}, ${secondaryColor})`;
+          btn.style.color = surfaceColor;
+        } else {
+          btn.style.backgroundColor = surfaceColor;
+          btn.style.color = textColor;
+        }
+      });
+    }
+
+    function switchLanguage(lang) {
+      currentLanguage = lang;
+      onConfigChange(window.elementSdk.config);
+    }
+
+    const element = {
+      defaultConfig,
+      onConfigChange,
+      mapToCapabilities: (config) => ({
         recolorables: [
           {
             get: () => config.background_color || defaultConfig.background_color,
@@ -1272,17 +606,17 @@
             }
           },
           {
-            get: () => config.primary_color || defaultConfig.primary_color,
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
             set: (value) => {
-              config.primary_color = value;
-              window.elementSdk.setConfig({ primary_color: value });
+              config.primary_action_color = value;
+              window.elementSdk.setConfig({ primary_action_color: value });
             }
           },
           {
-            get: () => config.accent_color || defaultConfig.accent_color,
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
             set: (value) => {
-              config.accent_color = value;
-              window.elementSdk.setConfig({ accent_color: value });
+              config.secondary_action_color = value;
+              window.elementSdk.setConfig({ secondary_action_color: value });
             }
           }
         ],
@@ -1301,58 +635,22 @@
             window.elementSdk.setConfig({ font_size: value });
           }
         }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
+      }),
+      mapToEditPanelValues: (config) => new Map([
         ["full_name", config.full_name || defaultConfig.full_name],
-        ["job_title_en", config.job_title_en || defaultConfig.job_title_en],
-        ["job_title_de", config.job_title_de || defaultConfig.job_title_de],
-        ["job_title_fa", config.job_title_fa || defaultConfig.job_title_fa],
-        ["tagline_en", config.tagline_en || defaultConfig.tagline_en],
-        ["tagline_de", config.tagline_de || defaultConfig.tagline_de],
-        ["tagline_fa", config.tagline_fa || defaultConfig.tagline_fa],
+        ["job_title", config.job_title || defaultConfig.job_title],
         ["email", config.email || defaultConfig.email],
         ["phone", config.phone || defaultConfig.phone],
-        ["location", config.location || defaultConfig.location]
-      ]);
-    }
-
-    // Language switcher functionality
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        currentLang = lang;
-        
-        // Update active button
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        // Update content
-        document.querySelectorAll('.content-section').forEach(section => {
-          section.classList.remove('active');
-        });
-        document.querySelector(`[data-content="${lang}"]`).classList.add('active');
-        
-        // Re-apply colors to active button
-        if (window.elementSdk && window.elementSdk.config) {
-          const config = window.elementSdk.config;
-          const primaryColor = config.primary_color || defaultConfig.primary_color;
-          btn.style.backgroundColor = primaryColor;
-          btn.style.color = '#ffffff';
-        }
-      });
-    });
+        ["location", config.location || defaultConfig.location],
+        ["summary_text", config.summary_text || defaultConfig.summary_text],
+        ["education_title", config.education_title || defaultConfig.education_title],
+        ["skills_title", config.skills_title || defaultConfig.skills_title]
+      ])
+    };
 
     if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
+      window.elementSdk.init(element);
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae00cdde45e06ca',t:'MTc2NTczOTkzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae06c37e6841717',t:'MTc2NTc0Mzg0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
