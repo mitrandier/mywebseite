@@ -1,0 +1,1240 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehdi Miri - Beginner Backend Developer | AI-Enthusiast</title>
+  <meta name="description" content="Beginner Backend Developer passionate about AI, Blockchain seeking IT Ausbildung in Germany.">
+  <meta name="keywords" content="backend developer, Python, FastAPI, blockchain, AI enthusiast, Mehdi Miri">
+  <meta name="author" content="Mehdi Miri">
+  <meta property="og:title" content="Mehdi Miri - Backend Developer">
+  <meta property="og:description" content="Beginner Backend Developer seeking IT Ausbildung in Germany">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://mehdimiri.online/?lang=en">
+  <link rel="alternate" hreflang="de" href="https://mehdimiri.online/?lang=de">
+  <link rel="alternate" hreflang="fa" href="https://mehdimiri.online/?lang=fa">
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-slide-in {
+      animation: slideInRight 0.6s ease-out forwards;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: -24px;
+      width: 2px;
+      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .timeline-item:last-child::before {
+      bottom: 0;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: -6px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #667eea;
+    }
+    
+    .skill-tag {
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .skill-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+    
+    .proficiency-badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+    
+    .proficiency-beginner {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    
+    .proficiency-intermediate {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    
+    .proficiency-advanced {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    
+    .lang-selector-btn {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .lang-selector-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .lang-selector-btn.active {
+      border: 3px solid #667eea;
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    }
+    
+    .fade-transition {
+      transition: opacity 0.3s ease;
+    }
+    
+    .progress-bar {
+      transition: width 1s ease-out;
+    }
+    
+    #back-to-top {
+      transition: all 0.3s ease;
+    }
+    
+    #back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+    }
+    
+    .mobile-menu {
+      transition: all 0.3s ease;
+      max-height: 0;
+      overflow: hidden;
+    }
+    
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    
+    [dir="rtl"] {
+      direction: rtl;
+    }
+    
+    [dir="rtl"] .timeline-item::before {
+      left: auto;
+      right: 0;
+    }
+    
+    [dir="rtl"] .timeline-dot {
+      left: auto;
+      right: -6px;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-item::before {
+        left: 8px;
+      }
+      
+      .timeline-dot {
+        left: 2px;
+      }
+      
+      [dir="rtl"] .timeline-item::before {
+        left: auto;
+        right: 8px;
+      }
+      
+      [dir="rtl"] .timeline-dot {
+        left: auto;
+        right: 2px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto bg-gradient-to-br from-slate-50 to-slate-100">
+   <nav id="main-nav" class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+     <div class="flex justify-between items-center">
+      <div id="nav-name" class="text-xl sm:text-2xl font-bold gradient-text">
+       Mehdi Miri
+      </div>
+      <div class="hidden md:flex items-center gap-6"><a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_about">About</a> <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_experience">Experience</a> <a href="#education" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_education">Education</a> <a href="#projects" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_projects">Projects</a> <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_skills">Skills</a> <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium text-sm" data-i18n="nav_contact">Contact</a>
+       <div class="flex items-center gap-2 ml-4 border-l pl-4 border-gray-300"><button onclick="changeLanguage('en')" class="lang-btn px-2 py-1 rounded text-sm font-medium transition-all hover:bg-purple-50" data-lang="en">EN</button> <button onclick="changeLanguage('de')" class="lang-btn px-2 py-1 rounded text-sm font-medium transition-all hover:bg-purple-50" data-lang="de">DE</button> <button onclick="changeLanguage('fa')" class="lang-btn px-2 py-1 rounded text-sm font-medium transition-all hover:bg-purple-50" data-lang="fa">فا</button>
+       </div>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-purple-50" onclick="toggleMobileMenu()">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+       </svg></button>
+     </div>
+     <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="py-4 space-y-3"><a href="#about" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_about" onclick="toggleMobileMenu()">About</a> <a href="#experience" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_experience" onclick="toggleMobileMenu()">Experience</a> <a href="#education" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_education" onclick="toggleMobileMenu()">Education</a> <a href="#projects" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_projects" onclick="toggleMobileMenu()">Projects</a> <a href="#skills" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_skills" onclick="toggleMobileMenu()">Skills</a> <a href="#contact" class="block text-gray-700 hover:text-purple-600 font-medium" data-i18n="nav_contact" onclick="toggleMobileMenu()">Contact</a>
+       <div class="flex gap-2 pt-3 border-t border-gray-200"><button onclick="changeLanguage('en'); toggleMobileMenu();" class="lang-btn flex-1 px-3 py-2 rounded text-sm font-medium bg-purple-50" data-lang="en">EN</button> <button onclick="changeLanguage('de'); toggleMobileMenu();" class="lang-btn flex-1 px-3 py-2 rounded text-sm font-medium bg-purple-50" data-lang="de">DE</button> <button onclick="changeLanguage('fa'); toggleMobileMenu();" class="lang-btn flex-1 px-3 py-2 rounded text-sm font-medium bg-purple-50" data-lang="fa">فا</button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <main>
+    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20">
+     <div class="max-w-4xl text-center animate-fade-in-up">
+      <div class="mb-6 animate-float"><img src="https://example.com/your-profile-image.jpg" alt="Mehdi Miri Profile Photo" class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full shadow-2xl object-cover border-4 border-white" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl sm:text-5xl font-bold shadow-2xl" style="display: none;">
+        MM
+       </div>
+      </div>
+      <h1 id="hero-name" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gradient-text">Mehdi Miri</h1>
+      <p id="hero-title" class="text-xl sm:text-2xl text-gray-600 mb-4" data-i18n="hero_title">Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany</p>
+      <p id="hero-tagline" class="text-base sm:text-lg text-gray-500 mb-8 max-w-2xl mx-auto" data-i18n="hero_tagline">Passionate about AI, Blockchain, and modern programming technologies. Building scalable solutions with an analytical mindset shaped by chess.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#projects" class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105" data-i18n="hero_cta_projects"> View My Work </a> <a href="#contact" class="inline-block bg-white text-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-purple-600" data-i18n="hero_cta_contact"> Get In Touch </a>
+      </div>
+     </div>
+    </section>
+    <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center gradient-text" data-i18n="section_about">About Me</h2>
+      <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 sm:p-8 shadow-lg space-y-4">
+       <p id="about-p1" class="text-base sm:text-lg text-gray-700 leading-relaxed" data-i18n="about_p1">I am a motivated Beginner Backend Developer passionate about AI, Blockchain, and modern programming technologies. I enjoy solving problems, learning new tools, and building scalable solutions, applying an analytical mindset shaped by chess.</p>
+       <p id="about-p2" class="text-base sm:text-lg text-gray-700 leading-relaxed" data-i18n="about_p2">Currently focused on hands-on work with FastAPI, APIs, databases, workflow automation, and small AI projects. I have completed beginner courses in Python, Databases, and AI, plus intermediate Blockchain knowledge.</p>
+       <p id="about-p3" class="text-base sm:text-lg text-gray-700 leading-relaxed" data-i18n="about_p3">My experience includes Crypto Technical Support (troubleshooting for ~100 users), 5+ years as a Blockchain &amp; Crypto Analyst, and leading content production teams. I'm seeking a hands-on Ausbildung in IT or Software Development in Germany to contribute to backend and blockchain projects while growing professionally.</p>
+      </div>
+     </div>
+    </section>
+    <section id="experience" class="py-16 sm:py-20 px-4 sm:px-6">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_experience">Professional Experience</h2>
+      <div class="space-y-8 sm:space-y-12 relative pl-8 sm:pl-12">
+       <div class="timeline-item relative">
+        <div class="timeline-dot"></div>
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+          <div>
+           <h3 id="exp1-company" class="text-xl sm:text-2xl font-bold text-gray-800">Personal Goal Pursuit</h3>
+           <p id="exp1-title" class="text-base sm:text-lg text-purple-600 font-semibold">Career Break - IT Ausbildung Preparation</p>
+          </div><span id="exp1-dates" class="text-sm text-gray-500 whitespace-nowrap">Dec 2024 - Present</span>
+         </div>
+         <p class="text-sm text-gray-600 mb-3">📍 Kermanshah, Iran</p>
+         <ul id="exp1-desc" class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp1_bullet1">Strengthening German language skills (currently B2) and improving professional English</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp1_bullet2">Building solid IT and programming fundamentals through online courses (Alison, YouTube, self-study)</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp1_bullet3">Learning software development, backend concepts, APIs, and databases</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp1_bullet4">Improving ability to work independently, stay disciplined, and manage long-term learning goals</span></li>
+         </ul>
+         <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">German B2</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Self-Study</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">IT Fundamentals</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Backend Development</span>
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item relative">
+        <div class="timeline-dot"></div>
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+          <div>
+           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Self-Employed</h3>
+           <p class="text-base sm:text-lg text-purple-600 font-semibold">Social Media Manager | Content Producer | Digital Media Specialist</p>
+          </div><span class="text-sm text-gray-500 whitespace-nowrap">Sep 2023 - Dec 2024</span>
+         </div>
+         <p class="text-sm text-gray-600 mb-3">📍 Kermanshah, Iran</p>
+         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp2_bullet1">Led a team of 2 colleagues (1 translator, 1 video/photo editor), coordinating end-to-end production of 10+ daily content pieces</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp2_bullet2">Managed cross-platform scheduling and publishing on Facebook, YouTube, Instagram, Twitter, and Telegram</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp2_bullet3">Implemented structured digital workflows and automation, improving efficiency and reliability of content delivery</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp2_bullet4">Oversaw quality control at every stage, including translation, editing, titling, and final content publication</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span data-i18n="exp2_bullet5">Developed basic IT system knowledge, workflow automation, and data management skills relevant for IT Ausbildung</span></li>
+         </ul>
+         <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Workflow Automation</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Cross-Platform Publishing</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Team Leadership</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Digital Tools</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Data Management</span>
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item relative">
+        <div class="timeline-dot"></div>
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+          <div>
+           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Self-Employed</h3>
+           <p class="text-base sm:text-lg text-purple-600 font-semibold">Blockchain &amp; Crypto Market Analyst | Trader | Portfolio Manager</p>
+          </div><span class="text-sm text-gray-500 whitespace-nowrap">Sep 2018 - Jun 2024</span>
+         </div>
+         <p class="text-sm text-gray-600 mb-3">📍 Kermanshah, Iran</p>
+         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Executed spot, margin, and futures trading strategies across centralized and decentralized exchanges</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Conducted technical and fundamental analysis using charts, indicators, and on-chain blockchain data</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Utilized software and hardware wallets, APIs, and blockchain explorers (BTC, ETH, ERC20) to monitor transactions</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Managed staking, HODLing, and diversified crypto portfolios with risk management strategies</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Handled NFT acquisitions, portfolio valuations, and digital asset tracking</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Designed automated watchlists, alerts, and dashboards to optimize decision-making and workflow automation</span></li>
+         </ul>
+         <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Blockchain Analysis</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Crypto Trading</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">APIs</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Data Analysis</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Portfolio Management</span>
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item relative">
+        <div class="timeline-dot"></div>
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+          <div>
+           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Hampayvand Accelerator</h3>
+           <p class="text-base sm:text-lg text-purple-600 font-semibold">Blockchain Consultant | Web3 Strategy &amp; Technical Research</p>
+          </div><span class="text-sm text-gray-500 whitespace-nowrap">Jun 2019 - Nov 2019</span>
+         </div>
+         <p class="text-sm text-gray-600 mb-3">📍 Hamedan, Iran</p>
+         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Led the design, planning, and implementation of the initial roadmap for a blockchain startup focused on secure storage of Electronic Health Records (EHRs)</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Conducted technical research and analysis for blockchain infrastructure and smart contract implementation</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Contributed to the development of the startup's white paper and strategic roadmap</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Gained hands-on experience in blockchain analysis, Web3 technologies, and secure data management</span></li>
+         </ul>
+         <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Blockchain</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Smart Contracts</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Technical Research</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Web3</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">White Paper Development</span>
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item relative">
+        <div class="timeline-dot"></div>
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+          <div>
+           <h3 class="text-xl sm:text-2xl font-bold text-gray-800">exvoto.io Cryptocurrency Exchange</h3>
+           <p class="text-base sm:text-lg text-purple-600 font-semibold">Technical Support Specialist | IT Support | Platform Troubleshooting</p>
+          </div><span class="text-sm text-gray-500 whitespace-nowrap">Dec 2018 - Oct 2019</span>
+         </div>
+         <p class="text-sm text-gray-600 mb-3">📍 Hamedan, Iran</p>
+         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Provided technical support and troubleshooting for users on a cryptocurrency exchange platform</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Assisted customers with account issues, platform navigation, and transaction-related questions</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Identified and escalated technical bugs and system errors to the engineering team</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Delivered user onboarding guidance and platform education to enhance customer experience</span></li>
+          <li class="flex gap-2"><span class="text-purple-600">•</span> <span>Collaborated with support and development teams to resolve issues efficiently</span></li>
+         </ul>
+         <div class="flex flex-wrap gap-2 mt-4"><span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Technical Support</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Customer Support</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Platform Troubleshooting</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">User Education</span> <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Team Collaboration</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="education" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_education">Education</h2>
+      <div class="space-y-6">
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+        <div class="flex items-start gap-4">
+         <div class="text-4xl">
+          🎓
+         </div>
+         <div class="flex-1">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+           <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Islamic Azad University</h3>
+            <p class="text-base sm:text-lg text-purple-600 font-semibold">Bachelor's Degree, Information Technology</p>
+           </div><span class="text-sm text-gray-500 whitespace-nowrap">Sep 2016 - Jul 2022</span>
+          </div>
+          <p class="text-gray-700 text-sm sm:text-base">Completed comprehensive IT program covering software development, systems architecture, and technology fundamentals</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 sm:p-8 shadow-lg card-hover">
+        <div class="flex items-start gap-4">
+         <div class="text-4xl">
+          📚
+         </div>
+         <div class="flex-1">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
+           <div>
+            <h3 id="edu1-school" class="text-xl sm:text-2xl font-bold text-gray-800">Alison Online Learning</h3>
+            <p id="edu1-degree" class="text-base sm:text-lg text-purple-600 font-semibold">Self-Taught IT &amp; Programming Courses</p>
+           </div><span id="edu1-dates" class="text-sm text-gray-500 whitespace-nowrap">2023 - 2024</span>
+          </div>
+          <p class="text-gray-700 text-sm sm:text-base" data-i18n="edu1_details">Focus on Backend Development, Python, Databases, AI, and Software Fundamentals</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="certifications" class="py-16 sm:py-20 px-4 sm:px-6">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_certifications">Licenses &amp; Certifications</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+       <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-4">
+         🏆
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Diploma in Computer Networking</h3>
+        <p class="text-purple-600 font-semibold mb-2">Alison</p>
+        <p class="text-sm text-gray-500 mb-3" data-i18n="cert1_dates">Network+, Optical Fiber, Firewalls</p><a href="https://alison.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-purple-600 hover:text-purple-700 text-sm font-medium"> <span data-i18n="view_credential">View Credential</span>
+         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+         </svg></a>
+       </div>
+       <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-4">
+         🏆
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Diploma in Python Programming</h3>
+        <p class="text-purple-600 font-semibold mb-2">Alison</p>
+        <p class="text-sm text-gray-500 mb-3" data-i18n="cert2_dates">Python Fundamentals &amp; Development</p><a href="https://alison.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-purple-600 hover:text-purple-700 text-sm font-medium"> <span data-i18n="view_credential">View Credential</span>
+         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+         </svg></a>
+       </div>
+       <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-4">
+         🏆
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Diploma in HTML5, CSS3 and JavaScript</h3>
+        <p class="text-purple-600 font-semibold mb-2">Alison</p>
+        <p class="text-sm text-gray-500 mb-3" data-i18n="cert3_dates">Frontend Web Development</p><a href="https://alison.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-purple-600 hover:text-purple-700 text-sm font-medium"> <span data-i18n="view_credential">View Credential</span>
+         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+         </svg></a>
+       </div>
+       <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-4">
+         🏆
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">German Language B2</h3>
+        <p class="text-purple-600 font-semibold mb-2">Professional Working Proficiency</p>
+        <p class="text-sm text-gray-500 mb-3" data-i18n="cert4_dates">Ongoing Language Development</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+     <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_projects">Projects</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-6xl">
+         🤖
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-800 mb-2">AI &amp; Automation Projects</h3>
+         <p class="text-gray-600 text-sm mb-3" data-i18n="project1_desc">Hands-on work with FastAPI, APIs, databases, and workflow automation using modern Python tools.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Python</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">FastAPI</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">APIs</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">SQL</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-6xl">
+         ⛓️
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-800 mb-2">Blockchain Analysis</h3>
+         <p class="text-gray-600 text-sm mb-3" data-i18n="project2_desc">5+ years experience with wallets, explorers, trading, NFT portfolios, and smart contract analysis.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Blockchain</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Crypto</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Smart Contracts</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">NFTs</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-6xl">
+         💬
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-800 mb-2">Crypto Technical Support</h3>
+         <p class="text-gray-600 text-sm mb-3" data-i18n="project3_desc">Troubleshooting and onboarding ~100 users, providing technical guidance on crypto platforms and tools.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Support</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Troubleshooting</span> <span class="px-2 py-1 bg-white text-purple-700 rounded text-xs font-medium">Onboarding</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="skills" class="py-16 sm:py-20 px-4 sm:px-6">
+     <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_skills">Skills &amp; Expertise</h2>
+      <div class="space-y-8">
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          💻
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_backend">Backend Development</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Python <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> FastAPI <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> SQL <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> APIs <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Git <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Linux Basics <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          🎨
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_frontend">Frontend Development</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> HTML5 <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> CSS3 <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> JavaScript <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          ⛓️
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_blockchain">Blockchain &amp; Crypto</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Blockchain Analysis <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Crypto Trading <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Smart Contracts <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> NFT Portfolios <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Wallet Management <span class="proficiency-badge proficiency-advanced" data-i18n="proficiency_advanced">Advanced</span> </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          🤖
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_ai">Artificial Intelligence</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> AI Fundamentals <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Data Analysis <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Workflow Automation <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          🌐
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_networking">Networking</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Network+ <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Optical Fiber <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Firewalls <span class="proficiency-badge proficiency-beginner" data-i18n="proficiency_beginner">Beginner</span> </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="text-3xl">
+          🎬
+         </div>
+         <h3 class="text-xl sm:text-2xl font-bold text-gray-800" data-i18n="skills_multimedia">Multimedia Production</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Adobe Photoshop <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Adobe Premiere Pro <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Video Editing <span class="proficiency-badge proficiency-intermediate" data-i18n="proficiency_intermediate">Intermediate</span> </span> <span class="skill-tag px-4 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-700 rounded-full text-sm font-medium"> Content Production <span class="proficiency-badge proficiency-advanced" data-i18n="proficiency_advanced">Advanced</span> </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="languages-section" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text" data-i18n="section_languages">Languages</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center gap-3 mb-3">
+         <div class="text-3xl">
+          🇮🇷
+         </div>
+         <h3 class="text-xl font-bold text-gray-800" data-i18n="lang_persian">Persian (Farsi)</h3>
+        </div>
+        <p class="text-purple-600 font-semibold mb-3" data-i18n="lang_persian_level">Native / Bilingual Proficiency</p>
+        <div class="w-full bg-white rounded-full h-3 overflow-hidden">
+         <div class="progress-bar bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full" style="width: 100%"></div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center gap-3 mb-3">
+         <div class="text-3xl">
+          🏴
+         </div>
+         <h3 class="text-xl font-bold text-gray-800" data-i18n="lang_kurdish">Kurdish</h3>
+        </div>
+        <p class="text-purple-600 font-semibold mb-3" data-i18n="lang_kurdish_level">Native / Bilingual Proficiency</p>
+        <div class="w-full bg-white rounded-full h-3 overflow-hidden">
+         <div class="progress-bar bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full" style="width: 100%"></div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center gap-3 mb-3">
+         <div class="text-3xl">
+          🇩🇪
+         </div>
+         <h3 class="text-xl font-bold text-gray-800" data-i18n="lang_german">German</h3>
+        </div>
+        <p class="text-purple-600 font-semibold mb-3" data-i18n="lang_german_level">Professional Working Proficiency (B2)</p>
+        <div class="w-full bg-white rounded-full h-3 overflow-hidden">
+         <div class="progress-bar bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full" style="width: 75%"></div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center gap-3 mb-3">
+         <div class="text-3xl">
+          🇬����
+         </div>
+         <h3 class="text-xl font-bold text-gray-800" data-i18n="lang_english">English</h3>
+        </div>
+        <p class="text-purple-600 font-semibold mb-3" data-i18n="lang_english_level">Limited Working Proficiency</p>
+        <div class="w-full bg-white rounded-full h-3 overflow-hidden">
+         <div class="progress-bar bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full" style="width: 50%"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="profile-language" class="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-purple-100 to-indigo-100">
+     <div class="max-w-4xl mx-auto text-center">
+      <div class="text-5xl mb-6">
+       🌐
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 gradient-text" data-i18n="profile_lang_title">Profile Language</h2>
+      <p class="text-base sm:text-lg text-gray-700 mb-8 max-w-2xl mx-auto" data-i18n="profile_lang_desc">This portfolio is available in multiple languages. Select your preferred language below to view the entire website in that language.</p>
+      <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto"><button onclick="changeLanguage('en')" class="lang-selector-btn bg-white rounded-2xl p-6 sm:p-8 shadow-lg" data-lang-selector="en">
+        <div class="text-5xl mb-4">
+         🇬🇧
+        </div><h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">English</h3><p class="text-gray-600 text-sm">Default Language</p></button> <button onclick="changeLanguage('de')" class="lang-selector-btn bg-white rounded-2xl p-6 sm:p-8 shadow-lg" data-lang-selector="de">
+        <div class="text-5xl mb-4">
+         🇩🇪
+        </div><h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Deutsch</h3><p class="text-gray-600 text-sm">Deutsche Sprache</p></button> <button onclick="changeLanguage('fa')" class="lang-selector-btn bg-white rounded-2xl p-6 sm:p-8 shadow-lg" data-lang-selector="fa">
+        <div class="text-5xl mb-4">
+         🇮🇷
+        </div><h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">فارسی</h3><p class="text-gray-600 text-sm">زبان فارسی</p></button>
+      </div>
+      <p class="text-sm text-gray-600 mt-8" data-i18n="profile_lang_note">💡 Your language preference will be saved for future visits</p>
+     </div>
+    </section>
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+     <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 gradient-text" data-i18n="section_contact">Let's Connect</h2>
+      <p class="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="contact_intro">I'm always open to discussing new opportunities, IT Ausbildung positions, or collaborations on backend and blockchain projects. Feel free to reach out!</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6"><a id="contact-email-link" href="mailto:mehdiporoki@gmail.com" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         📧
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_email">Email</h3></a> <a id="contact-linkedin-link" href="https://www.linkedin.com/in/mehdi-miri" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         💼
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_linkedin">LinkedIn</h3></a> <a id="contact-blog-link" href="https://virgool.io/@Mitimm" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         📝
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_blog">Blog</h3></a> <a href="tel:+989334784321" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         📱
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_phone">Phone</h3></a> <a href="https://wa.me/989334784321" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         💬
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_whatsapp">WhatsApp</h3></a> <a href="https://kermanshah.ir" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg card-hover">
+        <div class="text-4xl mb-3">
+         📍
+        </div><h3 class="font-semibold text-gray-800 text-sm sm:text-base" data-i18n="contact_location">Kermanshah, Iran</h3></a>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-base sm:text-lg mb-2" data-i18n="footer_text">© 2024 Mehdi Miri. Built with passion and dedication.</p>
+     <p class="text-sm opacity-80" data-i18n="footer_rights">All rights reserved.</p>
+    </div>
+   </footer><button id="back-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-gradient-to-r from-purple-600 to-indigo-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg></button>
+  </div>
+  <script>
+    const translations = {
+      en: {
+        nav_about: "About",
+        nav_experience: "Experience",
+        nav_education: "Education",
+        nav_projects: "Projects",
+        nav_skills: "Skills",
+        nav_contact: "Contact",
+        hero_title: "Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany",
+        hero_tagline: "Passionate about AI, Blockchain, and modern programming technologies. Building scalable solutions with an analytical mindset shaped by chess.",
+        hero_cta_projects: "View My Work",
+        hero_cta_contact: "Get In Touch",
+        section_about: "About Me",
+        about_p1: "I am a motivated Beginner Backend Developer passionate about AI, Blockchain, and modern programming technologies. I enjoy solving problems, learning new tools, and building scalable solutions, applying an analytical mindset shaped by chess.",
+        about_p2: "Currently focused on hands-on work with FastAPI, APIs, databases, workflow automation, and small AI projects. I have completed beginner courses in Python, Databases, and AI, plus intermediate Blockchain knowledge.",
+        about_p3: "My experience includes Crypto Technical Support (troubleshooting for ~100 users), 5+ years as a Blockchain & Crypto Analyst, and leading content production teams. I'm seeking a hands-on Ausbildung in IT or Software Development in Germany to contribute to backend and blockchain projects while growing professionally.",
+        section_experience: "Professional Experience",
+        exp1_bullet1: "Strengthening German language skills (currently B2) and improving professional English",
+        exp1_bullet2: "Building solid IT and programming fundamentals through online courses (Alison, YouTube, self-study)",
+        exp1_bullet3: "Learning software development, backend concepts, APIs, and databases",
+        exp1_bullet4: "Improving ability to work independently, stay disciplined, and manage long-term learning goals",
+        exp2_bullet1: "Led a team of 2 colleagues (1 translator, 1 video/photo editor), coordinating end-to-end production of 10+ daily content pieces",
+        exp2_bullet2: "Contributed to photo and video editing using Adobe Photoshop, Premiere Pro, and plugins",
+        exp2_bullet3: "Performed video trimming, audio adjustment, green screen editing, and content preparation",
+        exp2_bullet4: "Improved team efficiency by ~30% through process optimization",
+        section_education: "Education",
+        edu1_details: "Focus on Backend Development, Python, Databases, AI, and Software Fundamentals",
+        section_certifications: "Licenses & Certifications",
+        cert1_dates: "Network+, Optical Fiber, Firewalls",
+        cert2_dates: "Python Fundamentals & Development",
+        cert3_dates: "Frontend Web Development",
+        cert4_dates: "Ongoing Language Development",
+        view_credential: "View Credential",
+        section_projects: "Projects",
+        project1_desc: "Hands-on work with FastAPI, APIs, databases, and workflow automation using modern Python tools.",
+        project2_desc: "5+ years experience with wallets, explorers, trading, NFT portfolios, and smart contract analysis.",
+        project3_desc: "Troubleshooting and onboarding ~100 users, providing technical guidance on crypto platforms and tools.",
+        section_skills: "Skills & Expertise",
+        skills_backend: "Backend Development",
+        skills_frontend: "Frontend Development",
+        skills_blockchain: "Blockchain & Crypto",
+        skills_ai: "Artificial Intelligence",
+        skills_networking: "Networking",
+        skills_multimedia: "Multimedia Production",
+        proficiency_beginner: "Beginner",
+        proficiency_intermediate: "Intermediate",
+        proficiency_advanced: "Advanced",
+        section_languages: "Languages",
+        lang_persian: "Persian (Farsi)",
+        lang_persian_level: "Native / Bilingual Proficiency",
+        lang_kurdish: "Kurdish",
+        lang_kurdish_level: "Native / Bilingual Proficiency",
+        lang_german: "German",
+        lang_german_level: "Professional Working Proficiency (B2)",
+        lang_english: "English",
+        lang_english_level: "Limited Working Proficiency",
+        profile_lang_title: "Profile Language",
+        profile_lang_desc: "This portfolio is available in multiple languages. Select your preferred language below to view the entire website in that language.",
+        profile_lang_note: "💡 Your language preference will be saved for future visits",
+        section_contact: "Let's Connect",
+        contact_intro: "I'm always open to discussing new opportunities, IT Ausbildung positions, or collaborations on backend and blockchain projects. Feel free to reach out!",
+        contact_email: "Email",
+        contact_linkedin: "LinkedIn",
+        contact_blog: "Blog",
+        contact_phone: "Phone",
+        contact_whatsapp: "WhatsApp",
+        contact_location: "Kermanshah, Iran",
+        footer_text: "© 2024 Mehdi Miri. Built with passion and dedication.",
+        footer_rights: "All rights reserved."
+      },
+      de: {
+        nav_about: "Über mich",
+        nav_experience: "Erfahrung",
+        nav_education: "Ausbildung",
+        nav_projects: "Projekte",
+        nav_skills: "Fähigkeiten",
+        nav_contact: "Kontakt",
+        hero_title: "Beginnender Backend-Entwickler | KI-Enthusiast | Suche IT-Ausbildung in Deutschland",
+        hero_tagline: "Leidenschaftlich für KI, Blockchain und moderne Programmierungstechnologien. Skalierbare Lösungen entwickeln mit analytischem Denken aus Schach.",
+        hero_cta_projects: "Meine Arbeit ansehen",
+        hero_cta_contact: "Kontakt aufnehmen",
+        section_about: "Über mich",
+        about_p1: "Ich bin ein motivierter Beginnender Backend-Entwickler mit Leidenschaft für KI, Blockchain und moderne Programmierungstechnologien. Ich löse gerne Probleme, lerne neue Tools und baue skalierbare Lösungen mit analytischem Denken aus Schach.",
+        about_p2: "Derzeit konzentriere ich mich auf praktische Arbeit mit FastAPI, APIs, Datenbanken, Workflow-Automatisierung und kleinen KI-Projekten. Ich habe Anfängerkurse in Python, Datenbanken und KI sowie mittleres Blockchain-Wissen abgeschlossen.",
+        about_p3: "Meine Erfahrung umfasst Crypto Technical Support (~100 Benutzer), 5+ Jahre als Blockchain & Crypto Analyst und Leitung von Content-Produktionsteams. Ich suche eine praxisnahe Ausbildung in IT oder Softwareentwicklung in Deutschland für Backend- und Blockchain-Projekte.",
+        section_experience: "Berufserfahrung",
+        exp1_bullet1: "Verbesserung der deutschen Sprachkenntnisse (derzeit B2) und professionelles Englisch",
+        exp1_bullet2: "Aufbau solider IT- und Programmiergrundlagen durch Online-Kurse (Alison, YouTube, Selbststudium)",
+        exp1_bullet3: "Lernen von Softwareentwicklung, Backend-Konzepten, APIs und Datenbanken",
+        exp1_bullet4: "Verbesserung der Fähigkeit, selbstständig zu arbeiten, diszipliniert zu bleiben und langfristige Lernziele zu verwalten",
+        exp2_bullet1: "Leitung eines Teams von 2 Kollegen (1 Übersetzer, 1 Video-/Foto-Editor), Koordination der Produktion von 10+ täglichen Content-Stücken",
+        exp2_bullet2: "Beitrag zur Foto- und Videobearbeitung mit Adobe Photoshop, Premiere Pro und Plugins",
+        exp2_bullet3: "Video-Trimmen, Audio-Anpassung, Green-Screen-Bearbeitung und Content-Vorbereitung",
+        exp2_bullet4: "Verbesserung der Team-Effizienz um ~30% durch Prozessoptimierung",
+        section_education: "Ausbildung",
+        edu1_details: "Schwerpunkt auf Backend-Entwicklung, Python, Datenbanken, KI und Software-Grundlagen",
+        section_certifications: "Lizenzen & Zertifizierungen",
+        cert1_dates: "Network+, Glasfaser, Firewalls",
+        cert2_dates: "Python-Grundlagen & Entwicklung",
+        cert3_dates: "Frontend-Webentwicklung",
+        cert4_dates: "Laufende Sprachentwicklung",
+        view_credential: "Zertifikat ansehen",
+        section_projects: "Projekte",
+        project1_desc: "Praktische Arbeit mit FastAPI, APIs, Datenbanken und Workflow-Automatisierung mit modernen Python-Tools.",
+        project2_desc: "5+ Jahre Erfahrung mit Wallets, Explorern, Trading, NFT-Portfolios und Smart-Contract-Analyse.",
+        project3_desc: "Fehlerbehebung und Onboarding von ~100 Benutzern, technische Beratung zu Krypto-Plattformen und Tools.",
+        section_skills: "Fähigkeiten & Expertise",
+        skills_backend: "Backend-Entwicklung",
+        skills_frontend: "Frontend-Entwicklung",
+        skills_blockchain: "Blockchain & Krypto",
+        skills_ai: "Künstliche Intelligenz",
+        skills_networking: "Netzwerke",
+        skills_multimedia: "Multimedia-Produktion",
+        proficiency_beginner: "Anfänger",
+        proficiency_intermediate: "Fortgeschritten",
+        proficiency_advanced: "Experte",
+        section_languages: "Sprachen",
+        lang_persian: "Persisch (Farsi)",
+        lang_persian_level: "Muttersprachlich / Zweisprachig",
+        lang_kurdish: "Kurdisch",
+        lang_kurdish_level: "Muttersprachlich / Zweisprachig",
+        lang_german: "Deutsch",
+        lang_german_level: "Professionelle Arbeitskompetenz (B2)",
+        lang_english: "Englisch",
+        lang_english_level: "Begrenzte Arbeitskompetenz",
+        profile_lang_title: "Profilsprache",
+        profile_lang_desc: "Dieses Portfolio ist in mehreren Sprachen verfügbar. Wählen Sie unten Ihre bevorzugte Sprache aus.",
+        profile_lang_note: "💡 Ihre Sprachpräferenz wird für zukünftige Besuche gespeichert",
+        section_contact: "Kontaktieren Sie mich",
+        contact_intro: "Ich bin immer offen für neue Möglichkeiten, IT-Ausbildungspositionen oder Zusammenarbeit an Backend- und Blockchain-Projekten!",
+        contact_email: "E-Mail",
+        contact_linkedin: "LinkedIn",
+        contact_blog: "Blog",
+        contact_phone: "Telefon",
+        contact_whatsapp: "WhatsApp",
+        contact_location: "Kermanshah, Iran",
+        footer_text: "© 2024 Mehdi Miri. Mit Leidenschaft und Hingabe erstellt.",
+        footer_rights: "Alle Rechte vorbehalten."
+      },
+      fa: {
+        nav_about: "درباره م��",
+        nav_experience: "تجربه",
+        nav_education: "تحصیلات",
+        nav_projects: "پروژه‌ها",
+        nav_skills: "مهارت‌ها",
+        nav_contact: "تماس",
+        hero_title: "توسعه‌دهنده بک‌اند مبتدی | علاقه‌مند به هوش مصنوعی | جویای آزبیلدونگ IT در آلمان",
+        hero_tagline: "علاقه‌مند به هوش مصنوعی، بلاکچین و فناوری‌های برنامه‌نویسی مدرن. ساخت راه‌حل‌های مقیاس‌پذیر با تفکر تحلیلی شکل‌گرفته از شطرنج.",
+        hero_cta_projects: "مشاهده کارهای من",
+        hero_cta_contact: "تماس با من",
+        section_about: "درباره من",
+        about_p1: "من یک توسعه‌دهنده بک‌اند مبتدی با انگیزه هستم که به هوش مصنوعی، بلاکچین و فناوری‌های برنا��ه‌نویسی مدرن علاقه دارم. حل مسئله، یادگیری ابزارهای جدید و ساخت راه‌حل‌های مقیاس‌پذیر را دوست دارم.",
+        about_p2: "در حال حاضر بر کار عملی با FastAPI، APIها، پایگاه‌های داده، اتوماسیون گردکار و پروژه‌های کوچک هوش مصنوعی تمرکز دارم. دوره‌های مبتدی پایتون، پایگاه داده و هوش مصنوعی و دانش متوسط بلاکچین را گذرانده‌ام.",
+        about_p3: "تجربه من شامل پشتیبانی ����نی کریپتو (~100 کاربر)، 5+ سال تحلیلگر بلاکچین و کریپتو و رهبری تیم‌های تولید محتوا است. به دنبال آزبیلدونگ عملی IT یا توسعه نرم‌افزار در آلمان برای مشارکت در پروژه‌های بک‌اند و بلاکچین هستم.",
+        section_experience: "تجربه حرفه‌ای",
+        exp1_bullet1: "تقویت مهارت‌های زبان آلمانی (در حال حاضر B2) و بهبود انگلیسی حرفه‌ای",
+        exp1_bullet2: "ساخت مبانی قوی IT و برنامه‌نویسی از طریق دوره‌های آنل��ین (Alison، YouTube، خودآموزی)",
+        exp1_bullet3: "یادگیری توسعه نرم‌افزار، مفاهیم بک‌اند، APIها و پایگاه‌های داده",
+        exp1_bullet4: "بهبود توانایی کار مستقل، نظم‌پذیری و مدیریت اهداف یادگیری بلندمدت",
+        exp2_bullet1: "رهبری تیم 2 نفره (1 مترجم، 1 ویرایشگر ویدیو/عکس)، هماهنگی تولید 10+ محتوای ��وزانه",
+        exp2_bullet2: "مشارکت در ��یرایش عکس و ویدیو با Adobe Photoshop، Premiere Pro و افزونه‌ها",
+        exp2_bullet3: "برش ویدیو، تنظیم صدا، ویرایش گرین اسکرین و آماده‌سازی محتوا",
+        exp2_bullet4: "بهبود کارایی تیم حدود 30% از طریق بهینه‌سازی فرآیند",
+        section_education: "ت��صیلات",
+        edu1_details: "تمرکز بر توسعه بک‌اند، پایتون، پایگاه داده، هوش مصنوعی و مبانی نرم‌افزار",
+        section_certifications: "مدارک و گواهینامه‌ها",
+        cert1_dates: "Network+، فیبر نوری، فایروال‌ها",
+        cert2_dates: "مبانی و توسعه پایتون",
+        cert3_dates: "توسعه وب فرانت‌اند",
+        cert4_dates: "توسعه زبان در حال انجام",
+        view_credential: "مشاهده گواهینامه",
+        section_projects: "پر��ژه‌ها",
+        project1_desc: "کار عملی با FastAPI، APIها، پایگاه‌های داده و اتوماسیون گردکار با ابزارهای مدرن پایتون.",
+        project2_desc: "5+ سال تجربه با کیف پول‌ها، اکسپلورر، تریدین��، پورتفولی��های NFT و تحلیل قراردادهای هوشمند.",
+        project3_desc: "عیب‌یابی و آموزش ~100 کاربر، راهنمایی فنی در مورد پلتفرم‌ها و ابزارهای کریپتو.",
+        section_skills: "مهارت‌ها و تخصص",
+        skills_backend: "توسعه بک‌اند",
+        skills_frontend: "توسعه فرانت‌اند",
+        skills_blockchain: "بلاکچین و کریپتو",
+        skills_ai: "هوش مصنوعی",
+        skills_networking: "شبکه",
+        skills_multimedia: "تولید چندرسانه‌��ی",
+        proficiency_beginner: "مبتدی",
+        proficiency_intermediate: "متوسط",
+        proficiency_advanced: "پیشرفته",
+        section_languages: "زبان‌ها",
+        lang_persian: "فارسی",
+        lang_persian_level: "مادری / دو��بانه",
+        lang_kurdish: "کردی",
+        lang_kurdish_level: "��ادری / دوزبان��",
+        lang_german: "آلمانی",
+        lang_german_level: "تسلط حرفه‌ای کاری (B2)",
+        lang_english: "انگلیسی",
+        lang_english_level: "تسلط محدود کاری",
+        profile_lang_title: "زبان پروفایل",
+        profile_lang_desc: "این نمونه‌کار به چندین زبان در دسترس است. زبان دلخواه خود را در زیر انتخاب کنید.",
+        profile_lang_note: "💡 ترجیح زبان شما برای بازدیدهای آینده ذخیره می‌شود",
+        section_contact: "بیایید در ارتباط باشیم",
+        contact_intro: "من همیشه آماده بحث در مورد فرصت‌های جدید، موقعیت‌های آزبیلدونگ IT یا همکاری در پروژه‌های بک‌اند و بلاکچین هستم!",
+        contact_email: "ایمیل",
+        contact_linkedin: "لینکدین",
+        contact_blog: "بلاگ",
+        contact_phone: "تلفن",
+        contact_whatsapp: "واتساپ",
+        contact_location: "کرمانشاه، ایران",
+        footer_text: "© ۲۰۲۴ مهدی میری. ساخته شده با اشتیاق و فداکاری.",
+        footer_rights: "تمامی حقوق محفوظ است."
+      }
+    };
+
+    let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
+    const defaultConfig = {
+      background_color: "#f8fafc",
+      surface_color: "#ffffff",
+      text_color: "#1e293b",
+      primary_action_color: "#7c3aed",
+      secondary_action_color: "#6366f1",
+      font_family: "system-ui",
+      font_size: 16,
+      full_name: "Mehdi Miri",
+      professional_title: "Beginner Backend Developer | AI-Enthusiast | Seeking IT Ausbildung in Germany",
+      hero_tagline: "Passionate about AI, Blockchain, and modern programming technologies. Building scalable solutions with an analytical mindset shaped by chess.",
+      about_paragraph_1: "I am a motivated Beginner Backend Developer passionate about AI, Blockchain, and modern programming technologies. I enjoy solving problems, learning new tools, and building scalable solutions, applying an analytical mindset shaped by chess.",
+      about_paragraph_2: "Currently focused on hands-on work with FastAPI, APIs, databases, workflow automation, and small AI projects. I have completed beginner courses in Python, Databases, and AI, plus intermediate Blockchain knowledge.",
+      about_paragraph_3: "My experience includes Crypto Technical Support (troubleshooting for ~100 users), 5+ years as a Blockchain & Crypto Analyst, and leading content production teams. I'm seeking a hands-on Ausbildung in IT or Software Development in Germany to contribute to backend and blockchain projects while growing professionally.",
+      exp1_company: "Personal Goal Pursuit",
+      exp1_title: "Career Break - IT Ausbildung Preparation",
+      exp1_dates: "Dec 2024 - Present",
+      exp1_desc: "Focused self-development for IT Ausbildung in Germany",
+      edu1_school: "Alison Online Learning",
+      edu1_degree: "Self-Taught IT & Programming Courses",
+      edu1_dates: "2023 - 2024",
+      contact_email: "mehdiporoki@gmail.com",
+      contact_linkedin: "https://www.linkedin.com/in/mehdi-miri",
+      contact_blog: "https://virgool.io/@Mitimm"
+    };
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('preferredLanguage', lang);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+      
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('bg-purple-600', 'text-white');
+          btn.classList.remove('hover:bg-purple-50');
+        } else {
+          btn.classList.remove('bg-purple-600', 'text-white');
+          btn.classList.add('hover:bg-purple-50');
+        }
+      });
+      
+      document.querySelectorAll('.lang-selector-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang-selector') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      const backToTop = document.getElementById('back-to-top');
+      if (window.scrollY > 500) {
+        backToTop.style.opacity = '1';
+        backToTop.style.pointerEvents = 'auto';
+      } else {
+        backToTop.style.opacity = '0';
+        backToTop.style.pointerEvents = 'none';
+      }
+      
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${section.id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    async function onConfigChange(config) {
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+
+      document.getElementById('app').style.background = `linear-gradient(to bottom right, ${bgColor}, ${surfaceColor})`;
+      
+      const surfaces = document.querySelectorAll('nav, .bg-white, footer');
+      surfaces.forEach(el => {
+        if (el.tagName === 'NAV') {
+          el.style.backgroundColor = `${surfaceColor}e6`;
+        } else if (el.tagName === 'FOOTER') {
+          el.style.background = `linear-gradient(to right, ${primaryColor}, ${secondaryColor})`;
+        } else {
+          el.style.backgroundColor = surfaceColor;
+        }
+      });
+      
+      const textElements = document.querySelectorAll('p, h3, li, .text-gray-700, .text-gray-600, .text-gray-800, .text-gray-500');
+      textElements.forEach(el => {
+        el.style.color = textColor;
+        el.style.fontFamily = `${fontFamily}, system-ui, -apple-system, sans-serif`;
+      });
+      
+      document.querySelectorAll('h1').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, system-ui, -apple-system, sans-serif`;
+        el.style.fontSize = `${fontSize * 3}px`;
+      });
+      
+      document.querySelectorAll('h2').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, system-ui, -apple-system, sans-serif`;
+        el.style.fontSize = `${fontSize * 2.25}px`;
+      });
+      
+      document.querySelectorAll('h3').forEach(el => {
+        el.style.fontSize = `${fontSize * 1.25}px`;
+      });
+      
+      document.querySelectorAll('p, li').forEach(el => {
+        el.style.fontSize = `${fontSize}px`;
+      });
+      
+      const primaryButtons = document.querySelectorAll('a[href="#projects"], .skill-tag');
+      primaryButtons.forEach(el => {
+        if (el.classList.contains('skill-tag')) {
+          el.style.background = `linear-gradient(to right, ${primaryColor}20, ${secondaryColor}20)`;
+          el.style.color = primaryColor;
+        } else {
+          el.style.background = `linear-gradient(to right, ${primaryColor}, ${secondaryColor})`;
+        }
+      });
+      
+      const secondaryButtons = document.querySelectorAll('a[href="#contact"]');
+      secondaryButtons.forEach(el => {
+        if (el.classList.contains('border-2')) {
+          el.style.borderColor = primaryColor;
+          el.style.color = primaryColor;
+        }
+      });
+      
+      document.getElementById('nav-name').textContent = config.full_name || defaultConfig.full_name;
+      document.getElementById('hero-name').textContent = config.full_name || defaultConfig.full_name;
+      
+      const heroTitle = document.getElementById('hero-title');
+      const heroProfTitle = config.professional_title || defaultConfig.professional_title;
+      if (currentLang === 'en') {
+        heroTitle.textContent = heroProfTitle;
+      }
+      
+      const heroTagline = document.getElementById('hero-tagline');
+      const heroTag = config.hero_tagline || defaultConfig.hero_tagline;
+      if (currentLang === 'en') {
+        heroTagline.textContent = heroTag;
+      }
+      
+      const aboutP1 = document.getElementById('about-p1');
+      const aboutPara1 = config.about_paragraph_1 || defaultConfig.about_paragraph_1;
+      if (currentLang === 'en') {
+        aboutP1.textContent = aboutPara1;
+      }
+      
+      const aboutP2 = document.getElementById('about-p2');
+      const aboutPara2 = config.about_paragraph_2 || defaultConfig.about_paragraph_2;
+      if (currentLang === 'en') {
+        aboutP2.textContent = aboutPara2;
+      }
+      
+      const aboutP3 = document.getElementById('about-p3');
+      const aboutPara3 = config.about_paragraph_3 || defaultConfig.about_paragraph_3;
+      if (currentLang === 'en') {
+        aboutP3.textContent = aboutPara3;
+      }
+      
+      document.getElementById('exp1-company').textContent = config.exp1_company || defaultConfig.exp1_company;
+      document.getElementById('exp1-title').textContent = config.exp1_title || defaultConfig.exp1_title;
+      document.getElementById('exp1-dates').textContent = config.exp1_dates || defaultConfig.exp1_dates;
+      
+      document.getElementById('edu1-school').textContent = config.edu1_school || defaultConfig.edu1_school;
+      document.getElementById('edu1-degree').textContent = config.edu1_degree || defaultConfig.edu1_degree;
+      document.getElementById('edu1-dates').textContent = config.edu1_dates || defaultConfig.edu1_dates;
+      
+      const email = config.contact_email || defaultConfig.contact_email;
+      document.getElementById('contact-email-link').href = `mailto:${email}`;
+      
+      const linkedin = config.contact_linkedin || defaultConfig.contact_linkedin;
+      document.getElementById('contact-linkedin-link').href = linkedin;
+      
+      const blog = config.contact_blog || defaultConfig.contact_blog;
+      document.getElementById('contact-blog-link').href = blog;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              config.secondary_action_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["full_name", config.full_name || defaultConfig.full_name],
+        ["professional_title", config.professional_title || defaultConfig.professional_title],
+        ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+        ["about_paragraph_1", config.about_paragraph_1 || defaultConfig.about_paragraph_1],
+        ["about_paragraph_2", config.about_paragraph_2 || defaultConfig.about_paragraph_2],
+        ["about_paragraph_3", config.about_paragraph_3 || defaultConfig.about_paragraph_3],
+        ["exp1_company", config.exp1_company || defaultConfig.exp1_company],
+        ["exp1_title", config.exp1_title || defaultConfig.exp1_title],
+        ["exp1_dates", config.exp1_dates || defaultConfig.exp1_dates],
+        ["exp1_desc", config.exp1_desc || defaultConfig.exp1_desc],
+        ["edu1_school", config.edu1_school || defaultConfig.edu1_school],
+        ["edu1_degree", config.edu1_degree || defaultConfig.edu1_degree],
+        ["edu1_dates", config.edu1_dates || defaultConfig.edu1_dates],
+        ["contact_email", config.contact_email || defaultConfig.contact_email],
+        ["contact_linkedin", config.contact_linkedin || defaultConfig.contact_linkedin],
+        ["contact_blog", config.contact_blog || defaultConfig.contact_blog]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    changeLanguage(currentLang);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9adcb4bf637a1717',t:'MTc2NTcwNDg3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
