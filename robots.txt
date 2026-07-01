@@ -1,1 +1,5 @@
 
+GPTBot
+OAI-SearchBot
+Claude-Web
+Google-Extended
