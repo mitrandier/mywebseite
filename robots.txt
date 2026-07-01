@@ -1,5 +1,19 @@
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Content-Signal: ai-train=no, search=yes, ai-input=yes
-GPTBot
-OAI-SearchBot
-Claude-Web
-Google-Extended
+
+Sitemap: https://mehdimiri.online/sitemap.xml
