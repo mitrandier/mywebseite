@@ -1,4 +1,4 @@
-
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 GPTBot
 OAI-SearchBot
 Claude-Web
